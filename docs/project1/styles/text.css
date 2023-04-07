@@ -1,0 +1,37 @@
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Comfortaa', cursive; */
+
+.montserrat-paragraph-18 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+}
+
+.montserrat-paragraph-16 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7rem;
+}
+
+.montserrat-paragraph-14 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1rem;
+}
+
+.comfortaa-paragraph-24 {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 128%;
+}
+
+.roboto-form-16 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1rem;
+}

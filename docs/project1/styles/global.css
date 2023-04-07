@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: scroll;
+}
+
+.red {
+    color: #EB5757;
+}
+
+.logo {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+#modal {
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.47);
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+}
