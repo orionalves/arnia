@@ -1,0 +1,68 @@
+table, th, td {
+    border: 1px solid #E0E0E0;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    padding-left: 0.8rem;
+    text-align: left;
+}
+
+th {
+    color: #2F80ED;
+    font-weight: 400;
+}
+
+tbody {
+    color: #4F4F4F;
+}
+
+#cpf-th {
+    padding-left: 0.85rem;
+}
+
+#code-th, #action-th, .code {
+    width: 9.5rem;
+    padding: 0.8rem 3rem;
+    text-align: center;
+}
+
+.cpf-td {
+    padding-left: 0.5rem;
+}
+
+.actions {
+    padding: 0.8rem 1rem;
+}
+
+.icons-wrapper {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-medical-recorder, .icon-edit, .icon-delete {
+    align-self: center;
+    padding: 0.25rem 0.5rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    width: 2rem;
+    height: 1.5rem;
+    margin: 0;
+}
+
+.icon-medical-recorder{
+    border: 1px solid #017849;
+}
+
+.icon-edit {
+    border: 1px solid #2F80ED;
+}
+
+.icon-delete {
+    border: 1px solid #EB5757;
+}
+
+table img:hover {
+    cursor: pointer;
+}

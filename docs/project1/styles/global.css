@@ -5,6 +5,7 @@
 }
 
 body {
+    /* 1510 x 1069 */
     background-color: #F2F2F2;
 }
 
@@ -25,11 +26,12 @@ body {
 }
 
 .none {
-    display: none;
+    display: none !important;
 }
 
 #modal {
     z-index: 3;
+    /* background: #F2F2F2; */
     background: rgba(0, 0, 0, 0.47);
     position: fixed;
     inset: 0;

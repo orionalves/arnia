@@ -6,6 +6,12 @@
     border-radius: 16px;
 }
 
+.form-field {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
 .login .label, .login>a {
     color: #FFFFFF;
 }
@@ -26,7 +32,7 @@
     padding: 0% 1rem;
 }
 
-.input:focus {
+.input:focus, .search input:focus {
     outline: 2px solid #E0E0E0;
     outline-offset: -4px;
     color: #424242;
@@ -59,6 +65,7 @@
 .login .button-dark {
     margin: 2rem auto;
     max-height: 3rem;
+    border: 1px solid #FFFFFF;
 }
 
 .signup {
@@ -77,18 +84,18 @@
     margin-bottom: 1.5rem;
 }
 
-.signup .montserrat-paragraph-18, .signup .montserrat-paragraph-16 {
+.signup .montserrat-18, .signup .montserrat-16 {
     color: #00995D;
     display: flex;
     justify-content: center;
 }
 
-.signup .montserrat-paragraph-16 {
+.signup .montserrat-16 {
     margin-top: 0.4rem;
     margin-bottom: 1.5rem;
 }
 
-.signup .label, .signup .input, .signup small, .signup .right-button, .signup .montserrat-paragraph-14 {
+.signup .label, .signup .input, .signup small, .signup .right-button, .signup .montserrat-14 {
     width: 73%;
 }
 
@@ -106,11 +113,99 @@
     justify-content: flex-end;
 }
 
-.signup .montserrat-paragraph-14 {
+.signup .montserrat-14 {
     color: #6F6F6E;
     margin: 0.6rem auto;
 }
 
 .required {
     margin-bottom: -0.5rem;
+}
+
+.search {
+    display: flex;
+}
+
+.search label {
+    display: none;
+}
+
+.search input {
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 24px 0px 0px 24px;
+    padding: 0 1rem;
+}
+
+.form-patients {
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    margin: 1rem;
+    margin-top: 1rem;
+}
+
+.form-patients .title {
+    margin-bottom: -0.5rem;
+}
+
+.form-patients h1 {
+    font-weight: 700;
+    color: #00995D;
+}
+
+.x:hover {
+    cursor: pointer;
+}
+
+.form-patients>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.form-patients hr {
+    margin: -0.25rem -2rem -0.5rem -2rem;
+    border: 2px solid #E0E0E0;
+}
+
+.form-field label {
+    color: #4F4F4F;
+}
+
+.form-patients .form-field, .form-patients input, .form-patients label, .form-patients select {
+    margin: 0;
+    width: 20.5rem;
+}
+
+.select {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+
+    background: url('../images/icons/arrow-down.png') no-repeat right #FFFFFF;
+    background-position-x: 18.25rem;
+}
+
+option {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.confirm {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.confirm p:hover {
+    cursor: pointer;
+    color: #616161;
 }

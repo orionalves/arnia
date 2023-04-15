@@ -7,26 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="./images/icons/favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <script src="./scripts/textToAsterisks.js" defer></script>
+    <script src="./scripts/onClick.js" defer></script>
     <title>Wexer Psi | Login</title>
 </head>
 
 <body>
     <img class="background-logo" src="./images/background-logo.png" alt="background-logo">
     <div class="center">
-        <form class="login">
+        <form class="login" id="myForm">
             <img class="logo" src="./images/white-logo.png" alt="logo Wexer Psi">
             <div class="form-field roboto-form-16">
                 <label class="label" for="login">Login</label>
                 <input class="input" type="email" name="Login" id="login">
-                <small class="montserrat-paragraph-10 red"></small>
+                <small class="montserrat-10 red"></small>
             </div>
             <div class="form-field roboto-form-16">
                 <label class="label" for="password">Senha</label>
-                <input class="input" type="password" name="Senha" id="password">
-                <small class="montserrat-paragraph-10 red"></small>
+                <input class="input" type="text" name="Senha" id="password">
+                <small class="montserrat-10 red"></small>
             </div>
-            <button class="button-dark" type="submit">Entrar</button>
-            <a class="montserrat-paragraph-18" href="./pages/signup.html">Cadastre-se gratuitamente</a>
+            <button class="button-dark" type="submit" onclick="goToPage('./pages/patient.html')">Entrar</button>
+            <a class="montserrat-18" href="./pages/signup.html">Cadastre-se gratuitamente</a>
         </form>
     </div>
 </body>

@@ -1,8 +1,12 @@
-@import url('./styles/buttons.css');
-@import url('./styles/forms.css');
 @import url('./styles/global.css');
-@import url('./styles/main.css');
 @import url('./styles/text.css');
+@import url('./styles/header.css');
+@import url('./styles/main.css');
+@import url('./styles/forms.css');
+@import url('./styles/buttons.css');
+@import url('./styles/table.css');
+@import url('./styles/balloon.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');

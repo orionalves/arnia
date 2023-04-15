@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icons/favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../scripts/modal.js" defer></script>
+    <script src="../scripts/onClick.js" defer></script>
+    <title>Wexer Psi | Patient</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo-icon">
+            <img src="../images/logo-icon.png" alt="logo icon">
+        </div>
+        <div class="montserrat-24">
+            <p>Bem vindo(a), <span class="bold">Daniel</span></p>
+            <img class="icon" src="../images/icons/arrow-down.png" alt="arrow down" id="arrow-down">
+        </div>
+        <div class="none" id="balloon-wrapper">
+            <div class="balloon">
+                <div class="triangle"></div>
+                <div class="gradient">
+                    <p class="comfortaa-14">Admin</p>
+                    <p class="montserrat-12">daniel.wexer@gmail.com</p>
+                </div>
+                <div class="exit" onclick="goToPage('../index.html')">
+                    <img src="../images/icons/arrow-down-right.png" alt="green arrow down right">
+                    <p class="comfortaa-14">Sair</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h2 class="comfortaa-24">Meus pacientes</h2>
+            <div class="my-patients">
+                <div class="flex">
+                    <button class="button-icon-text" type="button" onclick="openModal(newPatient)">
+                        <img src="../images/icons/plus.svg" alt="plus">
+                        Novo Cadastro
+                    </button>
+                    <form class="search">
+                        <label for="search">
+                            Pesquisar:
+                        </label>
+                        <input type="text" name="search" placeholder="Pesquisar" id="search">
+                        <button class="button-search" type="button"><img src="../images/icons/magnifying-glass.svg"
+                                alt="magnifying glass">
+                            Filtrar</button>
+                    </form>
+                </div>
+                <table>
+                    <thead class="montserrat-16">
+                        <tr>
+                            <th class="code" id="code-th">Código</th>
+                            <th>Nome</th>
+                            <th id="cpf-th">CPF</th>
+                            <th id="action-th">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody class="montserrat-16">
+                        <tr onclick="openModal(showPatient)">
+                            <td class="code">28</td>
+                            <td>Ana Maria</td>
+                            <td class="cpf-td">885.012.130-00</td>
+                            <td class="actions">
+                                <div class="icons-wrapper">
+                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
+                                        alt="medical record button" onclick="goToPage('./medicalRecord.html')">
+                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="code">55</td>
+                            <td>Ana Clara</td>
+                            <td class="cpf-td">885.012.130-00</td>
+                            <td class="actions">
+                                <div class="icons-wrapper">
+                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
+                                        alt="medical record button" onclick="goToPage('./medicalRecord.html')">
+                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
+                                </div>
+                            </td>
+                        </tr>
+                        <td class="code">2452</td>
+                        <td>Cesar Pinheiro</td>
+                        <td class="cpf-td">885.012.130-00</td>
+                        <td class="actions">
+                            <div class="icons-wrapper">
+                                <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
+                                    alt="medical record button" onclick="goToPage('./medicalRecord.html')">
+                                <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                                <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
+                            </div>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="code">42</td>
+                            <td>Carlos Eduardo</td>
+                            <td class="cpf-td">885.012.130-00</td>
+                            <td class="actions">
+                                <div class="icons-wrapper">
+                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
+                                        alt="medical record button" onclick="goToPage('./medicalRecord.html')">
+                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
+                                </div>
+                            </td>
+                        </tr>
+                        <td class="code">2248</td>
+                        <td>Silvia Moreira</td>
+                        <td class="cpf-td">885.012.130-00</td>
+                        <td class="actions">
+                            <div class="icons-wrapper">
+                                <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
+                                    alt="medical record button" onclick="goToPage('./medicalRecord.html')">
+                                <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                                <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
+                            </div>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="code">24</td>
+                            <td>Wander Martins</td>
+                            <td class="cpf-td">885.012.130-00</td>
+                            <td class="actions">
+                                <div class="icons-wrapper">
+                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
+                                        alt="medical record button" onclick="goToPage('./medicalRecord.html')">
+                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <div class="none center" id="modal">
+        <div class="none form-patients" id="new-patient">
+            <div class="title">
+                <h1 class="montserrat-24">Novo paciente</h1>
+                <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="cpf">CPF</label>
+                    <input class="input" type="text" name="CPF" id="cpf" placeholder="Digite">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="name">Nome</label>
+                    <input class="input" type="text" name="Nome" id="name" placeholder="Digite">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="birthday">Data de Nascimento</label>
+                    <input class="input" type="text" name="Data-de-Nascimento" id="birthday" placeholder="Digite">
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="email">E-mail</label>
+                    <input class="input" type="text" name="E-mail" id="email" placeholder="Digite">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="sex-gender">Sexo/Gênero</label>
+                    <select class="input  select" name="Sexo-Gênero" id="sex-gender">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1">Masculino</option>
+                        <option value="option2">Feminino</option>
+                        <option value="option3">Outros</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label class="label" for="nationality">Nacionalidade</label>
+                    <select class="input  select" name="Nacionalidade" id="nationality">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1">Brasileiro(a)</option>
+                        <option value="option2">Estrangeiro(a)</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="place-of-birth">Naturalidade</label>
+                    <input class="input" type="text" name="Naturalidade" id="place-of-birth" placeholder="Digite">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="occupation">Profissão</label>
+                    <input class="input" type="text" name="Profissão" id="occupation" placeholder="Digite">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="education">Escolaridade</label>
+                    <input class="input" type="text" name="Escolaridade" id="education" placeholder="Digite">
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="marital-status">Estado Civil</label>
+                    <select class="input select" name="Estado-Civil" id="marital-status" placeholder="Escolha">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1">Solteiro(a)</option>
+                        <option value="option2">Casado(a)</option>
+                        <option value="option3">Separado(a)</option>
+                        <option value="option4">Divorciado(a)</option>
+                        <option value="option5">Viúvo(a)</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label class="label" for="mother">Mãe</label>
+                    <input class="input" type="text" name="Mãe" id="mother" placeholder="Digite">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="father">Pai  </label>
+                    <input class="input" type="text" name="Pai" id="father" placeholder="Digite">
+                </div>
+            </div>
+            <hr>
+            <div>
+                <p class="poppins-14">*Campos obrigatórios</p>
+                <div class="confirm">
+                    <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
+                    <button class="button-dark" type="button" onclick="success (newPatient, createRegister)">Criar</button>
+                </div>
+            </div>
+        </div>
+        <div class="none form-patients" id="show-patient">
+            <div class="title">
+                <div>
+                    <h1 class="montserrat-24">Dados do paciente</h1>
+                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                </div>
+                <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="cpf">CPF</label>
+                    <input class="input" type="text" name="CPF" id="cpf" placeholder="Digite" value="885.012.130-00">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="name">Nome</label>
+                    <input class="input" type="text" name="Nome" id="name" placeholder="Digite" value="Ana Maria">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="birthday">Data de Nascimento</label>
+                    <input class="input" type="text" name="Data-de-Nascimento" id="birthday" placeholder="Digite" value="10/09/1998">
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="email">E-mail</label>
+                    <input class="input" type="text" name="E-mail" id="email" placeholder="Digite" value="ana@gmail.com">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="sex-gender">Sexo/Gênero</label>
+                    <select class="input  select" name="Sexo-Gênero" id="sex-gender">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1">Masculino</option>
+                        <option value="option2" selected>Feminino</option>
+                        <option value="option3">Outros</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label class="label" for="nationality">Nacionalidade</label>
+                    <select class="input  select" name="Nacionalidade" id="nationality">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1" selected>Brasileiro(a)</option>
+                        <option value="option2">Estrangeiro(a)</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="place-of-birth">Naturalidade</label>
+                    <input class="input" type="text" name="Naturalidade" id="place-of-birth" placeholder="Digite" value="Belo Horizonte">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="occupation">Profissão</label>
+                    <input class="input" type="text" name="Profissão" id="occupation" placeholder="Digite" value="Engenheira">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="education">Escolaridade</label>
+                    <input class="input" type="text" name="Escolaridade" id="education" placeholder="Digite" value="Ensino Superior">
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="marital-status">Solteiro(a)</label>
+                    <select class="input  select" name="Estado-Civil" id="marital-status" placeholder="Escolha">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1" selected>Solteiro(a)</option>
+                        <option value="option2">Casado(a)</option>
+                        <option value="option3">Separado(a)</option>
+                        <option value="option4">Divorciado(a)</option>
+                        <option value="option5">Viúvo(a)</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label class="label" for="mother">Mãe</label>
+                    <input class="input" type="text" name="Mãe" id="mother" placeholder="Digite" value="Lurdes Silva">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="father">Pai</label>
+                    <input class="input" type="text" name="Pai" id="father" placeholder="Digite" value="Sandro Silva">
+                </div>
+            </div>
+        </div>
+        <div class="none form-patients" id="edit-patient">
+            <div class="title">
+                <h1 class="montserrat-24">Editar dados do paciente</h1>
+                <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="cpf">CPF</label>
+                    <input class="input" type="text" name="CPF" id="cpf" placeholder="Digite" value="885.012.130-00">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="name">Nome</label>
+                    <input class="input" type="text" name="Nome" id="name" placeholder="Digite" value="Ana Maria">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="birthday">Data de Nascimento</label>
+                    <input class="input" type="text" name="Data-de-Nascimento" id="birthday" placeholder="Digite" value="10/09/1998">
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="email">E-mail</label>
+                    <input class="input" type="text" name="E-mail" id="email" placeholder="Digite" value="ana@gmail.com">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="sex-gender">Sexo/Gênero</label>
+                    <select class="input  select" name="Sexo-Gênero" id="sex-gender">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1">Masculino</option>
+                        <option value="option2" selected>Feminino</option>
+                        <option value="option3">Outros</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label class="label" for="nationality">Nacionalidade</label>
+                    <select class="input  select" name="Nacionalidade" id="nationality">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1" selected>Brasileiro(a)</option>
+                        <option value="option2">Estrangeiro(a)</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="place-of-birth">Naturalidade</label>
+                    <input class="input" type="text" name="Naturalidade" id="place-of-birth" placeholder="Digite" value="Belo Horizonte">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="occupation">Profissão</label>
+                    <input class="input" type="text" name="Profissão" id="occupation" placeholder="Digite" value="Engenheira">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="education">Escolaridade</label>
+                    <input class="input" type="text" name="Escolaridade" id="education" placeholder="Digite" value="Ensino Superior">
+                </div>
+            </div>
+            <div>
+                <div class="form-field">
+                    <label class="label" for="marital-status">Solteiro(a)</label>
+                    <select class="input  select" name="Estado-Civil" id="marital-status" placeholder="Escolha">
+                        <option value="" disabled selected>Escolha</option>
+                        <option value="option1" selected>Solteiro(a)</option>
+                        <option value="option2">Casado(a)</option>
+                        <option value="option3">Separado(a)</option>
+                        <option value="option4">Divorciado(a)</option>
+                        <option value="option5">Viúvo(a)</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label class="label" for="mother">Mãe</label>
+                    <input class="input" type="text" name="Mãe" id="mother" placeholder="Digite" value="Lurdes Silva">
+                </div>
+                <div class="form-field">
+                    <label class="label" for="father">Pai</label>
+                    <input class="input" type="text" name="Pai" id="father" placeholder="Digite" value="Sandro Silva">
+                </div>
+            </div>
+            <hr>
+            <div>
+                <p class="poppins-14">*Campos obrigatórios</p>
+                <div class="confirm">
+                    <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
+                    <button class="button-dark" type="button" onclick="success (editPatient, editRegister)">Salvar alterações</button>
+                </div>
+            </div>
+        </div>
+        <div class="none success" id="success-create">
+            <img src="../images/check-mark-success.gif" alt="check mark success">
+            <p class="comfortaa-24">Paciente cadastrado com sucesso!</p>
+            <button class="button-dark" type="button" onclick="closeModal ()">Ok</button>
+        </div>
+        <div class="none success" id="success-edit">
+            <img src="../images/check-mark-success.gif" alt="check mark success">
+            <p class="comfortaa-24">Usuário editado com sucesso!</p>
+            <button class="button-dark" type="button" onclick="closeModal ()">Ok</button>
+        </div>
+        <div class="none success" id="success-delete">
+            <img src="../images/check-mark-success.gif" alt="check mark success">
+            <p class="comfortaa-24">Usuário deletado com sucesso!</p>
+            <button class="button-dark" type="button" onclick="closeModal ()">Ok</button>
+        </div>
+    </div>
+</body>
+
+</html>

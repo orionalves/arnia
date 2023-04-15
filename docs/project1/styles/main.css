@@ -5,7 +5,7 @@
     max-height: 77vh;
 }
 
-#success-register-user {
+.success {
     background-color: #FFF;
     border-radius: 16px;
     min-width: 34.5rem;
@@ -16,17 +16,54 @@
     gap: 1rem;
 }
 
-#success-register-user>img, #success-register-user>button, #success-register-user>p {
+.success>img, .success>button, .success>p {
     margin: auto;
 }
 
-#success-register-user>img {
+.success>img {
     margin-top: 2rem;
     width: 13rem;
     height: 13rem;
 }
 
-#success-register-user>button {
+.success>button {
     margin-bottom: 2rem;
     min-width: 17rem;
+}
+
+.success>p {
+    font-weight: 700;
+    line-height: 1.9rem;
+}
+
+main {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+main div {
+    min-width: 85%;
+}
+
+main h2 {
+    justify-self: flex-start;
+    padding-left: 0.75rem;
+    margin-bottom: 1rem;
+    color: #4F4F4F;
+}
+
+.my-patients {
+    background-color: #FFFFFF;
+    display: flex;    
+    flex-direction: column;
+    padding: 1.5rem 1.5rem 6rem 1.5rem;
+    gap: 3.1rem;
+    border-radius: 16px;
+    margin-bottom: 5rem;
+}
+
+.my-patients .flex {
+    display: flex;
+    justify-content: space-between;
 }
