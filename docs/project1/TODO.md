@@ -15,4 +15,5 @@
 [] - Corrigir css da página de login
 [] - Finalizar o html
 [] - Iniciar o CRUD
+[] - Finalizar os ítens obrigatórios
 [] - Usar o find para acessar criar o login
