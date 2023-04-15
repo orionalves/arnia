@@ -65,10 +65,10 @@
                         </tr>
                     </thead>
                     <tbody class="montserrat-16">
-                        <tr onclick="openModal(showPatient)">
-                            <td class="code">28</td>
-                            <td>Ana Maria</td>
-                            <td class="cpf-td">885.012.130-00</td>
+                        <tr>
+                            <td class="code" onclick="openModal(showPatient)">28</td>
+                            <td onclick="openModal(showPatient)">Ana Maria</td>
+                            <td class="cpf-td" onclick="openModal(showPatient)">885.012.130-00</td>
                             <td class="actions">
                                 <div class="icons-wrapper">
                                     <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
@@ -237,7 +237,7 @@
             <div class="title">
                 <div>
                     <h1 class="montserrat-24">Dados do paciente</h1>
-                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
+                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="success (showPatient, editPatient)">
                 </div>
                 <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
             </div>
