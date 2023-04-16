@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icons/favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../scripts/ballon.js" defer></script>
+    <script src="../scripts/modal.js" defer></script>
+    <script src="../scripts/onClick.js" defer></script>
+    <title>Wexer Psi | Medical Record</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo-to-go-back">
+            <div class="logo-icon">
+                <img src="../images/logo-icon.png" alt="logo icon">
+            </div>
+            <p class="comfortaa-16" onclick="goToPage('./patient.html')">Voltar para listagem</p>
+        </div>
+        <div class="montserrat-24">
+            <p>Bem vindo(a), <span class="bold">Daniel</span></p>
+            <img class="icon" src="../images/icons/arrow-down.png" alt="arrow down" id="arrow-down">
+        </div>
+        <div class="none" id="balloon-wrapper">
+            <div class="balloon">
+                <div class="triangle"></div>
+                <div class="gradient">
+                    <p class="comfortaa-14">Admin</p>
+                    <p class="montserrat-12">daniel.wexer@gmail.com</p>
+                </div>
+                <div class="exit" onclick="goToPage('../index.html')">
+                    <img src="../images/icons/arrow-down-right.png" alt="green arrow down right">
+                    <p class="comfortaa-14">Sair</p>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="flex top-title-search">
+                <h2 class="comfortaa-24">Prontuário</h2>
+                <form class="search">
+                    <label for="search">
+                        Pesquisar
+                    </label>
+                    <input type="text" name="search" placeholder="Pesquisar" id="search">
+                    <button class="button-search" type="button"><img src="../images/icons/magnifying-glass.svg" alt="magnifying glass">Filtrar</button>
+                </form>
+            </div>
+            <div class="flex">
+
+                <div class="patient-identification montserrat-16">
+                    <h3>Identificação do paciente</h3>
+                    <div>
+                        <div class="img-title">
+                            <img src="" alt="">
+                            <h4>Paciente</h4>
+                        </div>
+                        <p>Ana Ester Resende</p>
+                    </div>
+                    <div>
+                        <div class="img-title">
+                            <img src="" alt="">
+                            <h4>Nascimento</h4>
+                        </div>
+                        <p>10/09/2000</p>
+                    </div>
+                    <div>
+                        <div class="img-title">
+                            <img src="" alt="">
+                            <h4>Profissão</h4>
+                        </div>
+                        <p>Designer</p>
+                    </div>
+                    <div>
+                        <div class="img-title">
+                            <img src="" alt="">
+                            <h4>Escolaridade</h4>
+                        </div>
+                        <div>
+                            <p>Superior incompleto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-relevant-fact">
+                    
+                </div>
+            </div>
+            </main>
+        </div>

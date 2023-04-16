@@ -37,19 +37,16 @@
 }
 
 main {
-    margin-top: 1rem;
     display: flex;
     justify-content: center;
 }
 
-main div {
+.container {
     min-width: 85%;
 }
 
 main h2 {
-    justify-self: flex-start;
-    padding-left: 0.75rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     color: #4F4F4F;
 }
 
@@ -63,12 +60,59 @@ main h2 {
     margin-bottom: 5rem;
 }
 
-.my-patients .flex {
+.flex {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem
 }
 
 .title-icon {
     display: flex;
     gap: 1rem;
+}
+
+.top-title-search {
+    margin: 2rem 0;
+}
+
+.patient-identification {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex: 1;
+}
+
+.patient-identification h3 {
+    font-weight: 500;
+    color: #212121;
+    margin-bottom: 0.25rem;
+}
+.img-title {
+    display: flex;
+}
+
+.patient-identification h4 {
+    color: #00995D;
+    font-weight: 400;
+}
+.patient-identification p {
+    color: #616161;
+}
+
+.section-relevant-fact {
+    align-self: flex-start;
+    flex: 2;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
 }

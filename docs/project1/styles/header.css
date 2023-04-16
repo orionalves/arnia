@@ -1,6 +1,5 @@
 header {
     position: sticky;
-    /* width: 100%; */
     top: 0;
     min-height: 5rem;
     background: #FFFFFF;
@@ -19,6 +18,18 @@ header .logo-icon {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     width: 5rem;
     height: 5rem;
+}
+
+header .logo-to-go-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    color: #212121;
+}
+
+header .logo-to-go-back p:hover{
+    cursor: pointer;
 }
 
 header .montserrat-24 {

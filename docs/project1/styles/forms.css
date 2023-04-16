@@ -208,7 +208,12 @@ option {
     color: #616161;
 }
 
+#show-patient {
+    padding-bottom: 2.9rem;
+}
+
 #show-patient select, #show-patient input {
-    background-color: #BDBDBD;
+    background: #BDBDBD;
     opacity: 1;
+    pointer-events: none;
 }
