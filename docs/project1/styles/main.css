@@ -67,3 +67,8 @@ main h2 {
     display: flex;
     justify-content: space-between;
 }
+
+.title-icon {
+    display: flex;
+    gap: 1rem;
+}

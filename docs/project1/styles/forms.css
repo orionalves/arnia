@@ -187,8 +187,6 @@
     font-weight: 400;
     font-size: 0.9rem;
     -webkit-appearance: none;
-    -webkit-appearance: none;
-
     background: url('../images/icons/arrow-down.png') no-repeat right #FFFFFF;
     background-position-x: 18.25rem;
 }
@@ -208,4 +206,9 @@ option {
 .confirm p:hover {
     cursor: pointer;
     color: #616161;
+}
+
+#show-patient select, #show-patient input {
+    background-color: #BDBDBD;
+    opacity: 1;
 }

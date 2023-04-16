@@ -10,7 +10,7 @@
 [v] - Colocar o gif de cadastro realizado com sucesso
 [v] - Publicar a página
 [v] - Corrigir o js básico
-[] - Criar os três modais de dados do paciente
+[v] - Criar os três modais de dados do paciente
 [] - Criar a página dos prontuários
 [] - Corrigir css da página de login
 [] - Finalizar o html
