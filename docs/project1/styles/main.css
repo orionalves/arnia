@@ -109,7 +109,7 @@ main h2 {
 
 .section-relevant-fact {
     align-self: flex-start;
-    flex: 2;
+    flex: 2.7;
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
@@ -117,7 +117,7 @@ main h2 {
     padding: 1.5rem;
     display: flex;
     justify-content: space-around;
-    width: 5rem;
+    /* width: 5rem; */
 }
 
 .section-relevant-fact h3 {
