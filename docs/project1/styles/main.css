@@ -60,6 +60,10 @@ main h2 {
     margin-bottom: 5rem;
 }
 
+.my-patients .button-icon-text {
+    height: 3.25rem;
+}
+
 .flex {
     display: flex;
     justify-content: space-between;

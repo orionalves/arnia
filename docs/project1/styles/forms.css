@@ -1,9 +1,18 @@
-.login {
+.user-form {
     z-index: 2;
-    background-color: #017849;
-    width: 38rem;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    background-color: #017849;
+    width: 38rem;
+    padding: 5rem 7rem 3rem 7rem;
+    gap: 1.2rem;
 }
 
 .form-field {
@@ -12,24 +21,17 @@
     font-size: 0.9rem;
 }
 
-.login .label, .login>a {
-    color: #FFFFFF;
+.form-field .input {
+    margin-top: 0.2rem;
 }
 
-.login .logo {
-    margin: 4rem auto;
-}
-
-.input {
+.input, .search input {
     color: #828282;
-}
-
-.input {
+    padding: 0 1rem;
     background: #FFFFFF;
     border: 1px solid #BDBDBD;
     border-radius: 8px;
     height: 3rem;
-    padding: 0% 1rem;
 }
 
 .input:focus, .search input:focus {
@@ -38,79 +40,54 @@
     color: #424242;
 }
 
-.form-field>.input {
-    margin-top: 0.2rem;
-}
-
 .label, .input, small {
     display: block;
 }
 
-.label, .input, small, .login>button {
-    margin: auto;
-    width: 63%;
+.form-field, .label, .input, small, .login>button {
+    width: 100%;
 }
 
-.form-field, .login>button, .login>a {
-    margin-bottom: 1.2rem;
+.label {
+    color: #4F4F4F;
+}
+
+.login .logo {
+    margin-bottom: 2.8rem;
+}
+
+.login .form-field .label, .login>a {
+    color: #FFFFFF;
 }
 
 .login>a {
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3rem;
 }
 
 .login .button-dark {
-    margin: 2rem auto;
-    max-height: 3rem;
+    margin: 1rem auto 0.3rem auto;
+    height: 3rem;
     border: 1px solid #FFFFFF;
 }
 
 .signup {
-    z-index: 2;
     background-color: #FFFFFF;
+    gap: 1.5rem;
+    padding: 3rem 4rem 2.5rem 4rem;
     width: 32.5rem;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-}
-
-.signup .logo {
-    margin: 3rem auto 1.5rem auto;
-}
-
-.signup .form-field {
-    margin-bottom: 1.5rem;
 }
 
 .signup .montserrat-18, .signup .montserrat-16 {
     color: #00995D;
-    display: flex;
-    justify-content: center;
 }
 
-.signup .montserrat-16 {
-    margin-top: 0.4rem;
-    margin-bottom: 1.5rem;
-}
-
-.signup .label, .signup .input, .signup small, .signup .right-button, .signup .montserrat-14 {
-    width: 73%;
-}
-
-.signup .label {
-    color: #4F4F4F;
-}
-
-.signup .button-text-icon {
-    margin-bottom: 0.5rem;
+.signup .montserrat-18 {
+    margin-bottom: -1.2rem;
 }
 
 .right-button {
-    margin: 2rem auto;
-    display: flex;
-    justify-content: flex-end;
+    margin-top: 1rem;
+    align-self: flex-end;
 }
 
 .signup .montserrat-14 {
@@ -119,7 +96,8 @@
 }
 
 .required {
-    margin-bottom: -0.5rem;
+    margin: -0.5rem 0 -1rem 0;
+    align-self: flex-start;
 }
 
 .search {
@@ -131,14 +109,11 @@
 }
 
 .search input {
-    background: #FFFFFF;
-    border: 1px solid #BDBDBD;
     border-radius: 24px 0px 0px 24px;
-    padding: 0 1rem;
     width: 23.5rem;
 }
 
-.form-patients {
+.form-patients, .new-section {
     background: #FFFFFF;
     border-radius: 8px;
     display: flex;
@@ -153,7 +128,7 @@
     margin-bottom: -0.5rem;
 }
 
-.form-patients h1 {
+.form-patients h1, .new-section h1 {
     font-weight: 700;
     color: #00995D;
 }
@@ -162,7 +137,7 @@
     cursor: pointer;
 }
 
-.form-patients>div {
+.form-patients>div, .new-section>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -172,10 +147,6 @@
 .form-patients hr {
     margin: -0.25rem -2rem -0.5rem -2rem;
     border: 2px solid #E0E0E0;
-}
-
-.form-field label {
-    color: #4F4F4F;
 }
 
 .form-patients .form-field, .form-patients input, .form-patients label, .form-patients select {
