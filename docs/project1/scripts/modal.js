@@ -6,6 +6,7 @@ const deleteRegister = document.querySelector('#success-delete')
 const newPatient = document.querySelector('#new-patient')
 const editPatient = document.querySelector('#edit-patient')
 const showPatient = document.querySelector('#show-patient')
+const newsession = document.querySelector('#new-session')
 
 // Abre o modal
 function openModal(element) {
