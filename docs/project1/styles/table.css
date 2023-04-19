@@ -66,3 +66,7 @@ tbody {
 table img:hover {
     cursor: pointer;
 }
+
+td:hover {
+    cursor: default;
+}
