@@ -38,7 +38,6 @@
                     <p class="comfortaa-14">Sair</p>
                 </div>
             </div>
-            
         </div>
     </header>
     <main>
@@ -50,7 +49,8 @@
                         Pesquisar
                     </label>
                     <input type="text" name="search" placeholder="Pesquisar" id="search">
-                    <button class="button-search" type="button"><img src="../images/icons/magnifying-glass.svg" alt="magnifying glass">Filtrar</button>
+                    <button class="button-search" type="button"><img src="../images/icons/magnifying-glass.svg"
+                            alt="magnifying glass">Filtrar</button>
                 </form>
             </div>
             <div class="flex">
@@ -87,18 +87,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="session-relevant-fact">
-                    <div class="flex" onclick="openModal(newsession)">
-                        <img src="../images/icons/head-heart.png" alt="head wiht haert">
-                        <h3 class="montserrat-16">Sessão</h3>
+                <div class="right-content">
+                    <div class="session-relevant-fact">
+                        <div class="flex" onclick="openModal(newSession)">
+                            <img src="../images/icons/head-heart.png" alt="head wiht haert">
+                            <h3 class="montserrat-16">Sessão</h3>
+                        </div>
+                        <div class="flex" onclick="openModal(relevantFact)">
+                            <img src="../images/icons/pin.png" alt="pin">
+                            <h3 class="montserrat-16">Fato relevante</h3>
+                        </div>
                     </div>
-                    <div class="flex">
-                        <img src="../images/icons/pin.png" alt="pin">
-                        <h3 class="montserrat-16">Fato relevante</h3>
+                    <div class="line-text">
+                        <p class="montserrat-14">Filtrar por: <span>Todos</span>
+                        </p>
+                        <img class="icon" src="../images/icons/arrow-down.png" alt="arrow down" id="arrow-down">
                     </div>
+                    <div class="medical-record"></div>
                 </div>
             </div>
-            </main>
+        </div>
+    </main>
             <div class="none center" id="modal">
                 <div class="none new-session" id="new-session">
                     <div class="title">
@@ -169,7 +178,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                     <div class="montserrat-14">
                         <img src="" alt="">
@@ -177,6 +185,38 @@
                         </P>
                     </div>
                     </div>
+                    <div class="bottom">
+                    <hr>
+                    <div class="save">
+                        <p class="poppins-14">*Campos obrigatórios</p>
+                        <div class="confirm">
+                            <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
+                            <button class="button-dark" type="button" onclick="closeModal ()">Criar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="none relevant-fact" id="relevant-fact">
+                    <div class="title">
+                    <h1 class="montserrat-24">Novo Fato Relevante</h1>
+                    <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                    </div>
+                        <div class="fields">
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="date">Data*</label>
+                                <input class="input" type="text" name="date" id="date" placeholder="Digite" value="24/01/2023">
+                            </div>
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="title">Título*</label>
+                                <input class="input" type="text" name="title" id="title" placeholder="Digite">
+                            </div>
+                        </div>
+                        <div class="fields">
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="description">Descrição*</label>
+                                <textarea class="textarea" name="description" id="description" placeholder="Text"></textarea>
+                            </div>
+                        </div>
                     <div class="bottom">
                     <hr>
                     <div class="save">

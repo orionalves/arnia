@@ -116,7 +116,7 @@
     width: 23.5rem;
 }
 
-.form-patients, .new-session {
+.form-patients, .new-session, .relevant-fact {
     background: #FFFFFF;
     border-radius: 8px;
     display: flex;
@@ -129,7 +129,7 @@
     margin: 1rem;
 }
 
-.new-session {
+.new-session, .relevant-fact {
     width: 38rem;
     margin: 2rem;
     padding-bottom: 0;
@@ -144,7 +144,7 @@
     padding-bottom: 3rem;
 }
 
-.scroll-wrapper, .scroll-wrapper .fields {
+.scroll-wrapper, .scroll-wrapper .fields,  .relevant-fact{
     gap: 1rem;
 }
 
@@ -157,13 +157,17 @@
     margin-bottom: -0.5rem;
 }
 
-.form-patients h1, .new-session h1 {
+.form-patients h1, .new-session h1, .relevant-fact h1 {
     font-weight: 700;
     color: #00995D;
 }
 
-.new-session .title {
+.new-session .title{
     margin-bottom: 1.5rem;
+}
+
+.relevant-fact .title{
+    margin-bottom: 0.5rem;
 }
 
 .x:hover {
