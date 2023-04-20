@@ -11,8 +11,8 @@
 [v] - Publicar a página
 [v] - Corrigir o js básico
 [v] - Criar os três modais de dados do paciente
-[] - Criar a página dos prontuários
-[] - Corrigir css da página de login
+[v] - Criar a página dos prontuários
+[v] - Corrigir css da página de login
 [] - Finalizar o html
 [] - Iniciar o CRUD
 [] - Finalizar os ítens obrigatórios
