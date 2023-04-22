@@ -38,7 +38,7 @@ main {
 }
 
 .container {
-    min-width: 85%;
+    width: 85%;
 }
 
 main h2 {
@@ -86,6 +86,7 @@ main h2 {
     flex-direction: column;
     gap: 1.25rem;
     flex: 1;
+    align-self: flex-start;
 }
 
 .patient-identification h3 {
@@ -121,6 +122,7 @@ main h2 {
     padding: 1.5rem;
     display: flex;
     justify-content: space-around;
+    max-height: 5rem;
 }
 
 .session-relevant-fact h3 {
@@ -138,7 +140,7 @@ main h2 {
     width: 100%;
     height: 1px;
     background-color: #BDBDBD;
-    margin: 2rem 0 1.5rem 0;
+    margin: 2rem 0 3rem 0;
     position: relative;
 }
 
@@ -160,37 +162,59 @@ main h2 {
 .medical-record {
     position: relative;
     width: 100%;
-    max-height: 13rem;
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 0px 8px 8px 0px;
+    padding: 2.5rem 1.1rem 1.5rem 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .vertical {
     width: 4px;
     height: 100%;
     position: absolute;
+    top: 0;
     left: 0;
 }
 
-.session-box .vertical {
+.session-box .vertical, .session-box .circle {
     background-color: #00995D;
 }
 
-.medical-record .green-circle {
+.medical-record .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 3rem;
     width: 3rem;
+    border-radius: 50%;
     position: absolute;
     top: -1.5rem;
     left: 1.5rem;
 }
 
-.medical-record p {
-    max-width: 195ch;
+.medical-record .points-menu {
+    position: absolute;
+    right: 1.7rem;
+    top: 2.1rem;
+    letter-spacing: 0.25rem;
+    color: #212121;
 }
 
-.fact-relevant-box .vertical {
+.points-menu:hover, .line-text span:hover, .line-text img:hover, .session-relevant-fact:hover, .see-more:hover, #backToTop:hover {
+    cursor: pointer;
+}
+
+.medical-record h4 {
+    margin-bottom: 0.25rem;
+}
+
+.medical-record .montserrat-14 {
+    margin-bottom: 1.5rem;
+}
+
+.fact-relevant-box .vertical, .fact-relevant-box .circle {
     background-color: #2F80ED;
 }
 
@@ -211,6 +235,17 @@ main h2 {
     color: #FFFFFF;
 }
 
-.session-relevant-fact:hover {
-    cursor: pointer;
+.see-more {
+    color: #2F80ED;
+}
+
+#backToTop {
+    position: fixed;
+    margin-top: 1rem;
+    bottom: 1rem;
+    left: 50%;
+    align-items: center;
+    gap: 1rem;
+    color: #212121;
+    background-color:#F2F2F2;
 }
