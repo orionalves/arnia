@@ -13,6 +13,8 @@
 [v] - Criar os três modais de dados do paciente
 [v] - Criar a página dos prontuários
 [v] - Corrigir css da página de login
+[v] - Criar a página das sessões e Fatos Relevantes detalhados
+[] - Finalizar a página das sessões e Fatos Relevantes detalhados
 [] - Finalizar o html
 [] - Iniciar o CRUD
 [] - Finalizar os ítens obrigatórios

@@ -32,13 +32,11 @@
     line-height: 1.9rem;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-}
-
 .container {
     width: 85%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 main h2 {
@@ -112,6 +110,7 @@ main h2 {
 .right-content {
     flex: 2.7;
     align-self: flex-start;
+    margin-bottom: 1rem;
 }
 
 .session-relevant-fact {
@@ -144,19 +143,26 @@ main h2 {
     position: relative;
 }
 
-.line-text p {
-    background-color: #F2F2F2;
+.filter-by {
     color: #757575;
     padding-left: 0.5rem;
     font-weight: 500;
+    display: inline;
+    padding-right: 0.25rem;
 }
 
-.line-text p span {
-    color: #212121;
+#filter-menu, .payment {
+    display: flex;
+    align-items: center;
 }
 
-.line-text p, .line-text img {
+.filter-by, #filter-menu {
     background-color: #F2F2F2;
+}
+
+#filter-rule {
+    font-weight: 500;
+    color: #212121;
 }
 
 .medical-record {
@@ -197,12 +203,13 @@ main h2 {
 .medical-record .points-menu {
     position: absolute;
     right: 1.7rem;
-    top: 2.1rem;
+    top: 0.75rem;
     letter-spacing: 0.25rem;
     color: #212121;
+    padding: 0.5rem 1rem;
 }
 
-.points-menu:hover, .line-text span:hover, .line-text img:hover, .session-relevant-fact:hover, .see-more:hover, #backToTop:hover {
+.medical-record:hover, .points-menu:hover, #filter-menu:hover, .session-relevant-fact:hover, .see-more:hover, #backToTop:hover {
     cursor: pointer;
 }
 
@@ -241,11 +248,94 @@ main h2 {
 
 #backToTop {
     position: fixed;
-    margin-top: 1rem;
     bottom: 1rem;
     left: 50%;
     align-items: center;
     gap: 1rem;
     color: #212121;
     background-color:#F2F2F2;
+    border-radius: 8px;
+    padding: 0 1rem;
+}
+
+#options-menu-line {
+    width: 14rem;
+    height: 11rem;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0.75rem;
+    z-index: 1;
+}
+
+#options-menu-line .selected {
+    color: #00995D;
+    background-color: #C5F2E0;
+    font-weight: 700;
+}
+
+#options-menu-line p {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 33.34%;
+    padding: 1rem 1.5rem;
+}
+
+#options-menu-line p:hover {
+    color: #C5F2E0;
+    background-color: #00995D;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#options-menu-line p:first-child:hover {
+    border-radius: 8px 0 0 0;
+}
+#options-menu-line p:hover + * {
+    border-radius: 0;
+}
+#options-menu-line p:last-child:hover {
+    border-radius: 0 0 8px 8px;
+}
+
+.medical-anotations {
+    width: 62%;
+    margin: 4rem 9rem 1rem 9rem;
+}
+
+
+.full-anotations {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    color: #000000;
+    position: relative;
+}
+
+.full-anotations h4 {
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+.full-anotations>p {
+    color: #616161;
+}
+
+.full-anotations>p + p {
+    color: #424242;
+}
+
+.full-anotations>p, .full-anotations>p + p {
+    margin-bottom: 1.5rem;
+}
+
+.payment {
+    gap: 3rem;
+}
+
+.payment>div p:first-child{
+    color: #757575;
+    margin-bottom: 0.3rem;
 }

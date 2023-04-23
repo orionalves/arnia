@@ -10,6 +10,12 @@ function goToPage (page) {
     window.location.href=page 
 }
 
+function openMedicalAnotation (medicalAnotation, event) {
+    if (!event.target.classList.contains('see-more') && !event.target.classList.contains('points-menu') ) { 
+        goToPage(medicalAnotation); }
+}
+
+
 // const expand = (questionId) => {
 //     const question = document.getElementById(questionId)
 //     const expand = question.querySelector('.expanded')

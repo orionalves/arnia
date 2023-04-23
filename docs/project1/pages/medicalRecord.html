@@ -101,11 +101,18 @@
                         </div>
                     </div>
                     <div class="line-text">
-                        <p class="montserrat-14">Filtrar por: <span>Todos</span>
-                        </p>
-                        <img class="icon" src="../images/icons/arrow-down.png" alt="arrow down" id="arrow-down">
+                        <p class="montserrat-14 filter-by">Filtrar por:</p>
+                        <div id="filter-menu">
+                            <p class="montserrat-14" id="filter-rule"></p>
+                            <img class="icon" src="../images/icons/arrow-down.png" alt="arrow down">
+                        </div>
+                        <div class="none" id="options-menu-line">
+                            <p class="montserrat-16 selected">Todos</p>
+                            <p class="montserrat-16">Sessão</p>
+                            <p class="montserrat-16">Fato Relevante</p>
+                        </div>
                     </div>
-                    <div class="medical-record session-box">
+                    <div class="medical-record session-box" onclick="openMedicalAnotation('./medicalAnotation.html', event)">
                         <div class="vertical"></div>
                         <div class="circle">
                             <img src="../images/icons/white-head-heart.png" alt="head wiht haert">

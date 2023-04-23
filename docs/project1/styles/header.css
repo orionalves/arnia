@@ -29,7 +29,7 @@ header .logo-to-go-back {
     color: #212121;
 }
 
-header .logo-to-go-back p:hover{
+header .logo-to-go-back p:hover, .goBack:hover{
     cursor: pointer;
 }
 
@@ -42,4 +42,18 @@ header .montserrat-24 {
 header .icon {
     margin-left: 0.5rem;
     height: 1.5rem;
+}
+
+.goBack {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: #4F4F4F;
+    gap: 1rem;
+    background-color: #FFFFFF;
+    border-radius: 16px 0 0 16px;
+    position: absolute;
+    top: 5.2rem;
+    left: 5rem;
+    right: 0;
 }
