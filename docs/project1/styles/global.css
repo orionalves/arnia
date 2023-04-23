@@ -18,6 +18,9 @@ body {
 .red {
     color: #EB5757;
 }
+.blue {
+    color: #2F80ED;
+}
 
 .none {
     display: none !important;

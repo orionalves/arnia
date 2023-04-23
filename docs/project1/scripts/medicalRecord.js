@@ -4,6 +4,20 @@ const factRelevantBox = document.querySelectorAll('.fact-relevant-box')
 const optionsMenuLine = document.querySelector('#options-menu-line')
 const filterRule = document.querySelector('#filter-rule')
 filterRule.textContent = optionsMenuLine.querySelector('.selected').textContent
+const medicalRecords = document.querySelectorAll('.medical-record');
+
+medicalRecords.forEach(medicalRecord => {
+    const pointsMenu = medicalRecord.querySelector('.points-menu');
+    const optionsPointsMenu = medicalRecord.querySelector('.options-points-menu');
+    pointsMenu.addEventListener('click', event => {
+        optionsPointsMenu.classList.remove('none');
+        document.addEventListener('click', function(event) {
+            if (!pointsMenu.contains(event.target) && event.target !== optionsPointsMenu) {
+                optionsPointsMenu.classList.add('none')
+            }
+        });
+    });
+});
 
 document.addEventListener('click', function(event) {
     if (!filterMenu.contains(event.target) && event.target !== optionsMenuLine) {
@@ -11,6 +25,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Filtrar por sessões e fatos relevantes.
 filterMenu.addEventListener('click', function() {
     optionsMenuLine.classList.toggle('none')
     optionsMenuLine.addEventListener('click', function(event) {

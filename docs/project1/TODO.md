@@ -14,8 +14,12 @@
 [v] - Criar a página dos prontuários
 [v] - Corrigir css da página de login
 [v] - Criar a página das sessões e Fatos Relevantes detalhados
-[] - Finalizar a página das sessões e Fatos Relevantes detalhados
-[] - Finalizar o html
+[v] - Finalizar a página das sessões e Fatos Relevantes detalhados
+[v] - Finalizar a página dos prontuários
+[v] - Finalizar o html estático
 [] - Iniciar o CRUD
+[] - Finalizar o CRUD
 [] - Finalizar os ítens obrigatórios
+[] - Refatorar o código
 [] - Usar o find para acessar criar o login
+[] - Fazer para celular

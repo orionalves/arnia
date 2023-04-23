@@ -62,7 +62,7 @@
 // });
   
 
-
+// Preciso atualizar isso. Está bugado.
 // Funciona
 function expandParagraph(paragraph, text) {
     paragraph.innerHTML = text + '<span class="see-more"> Ver menos</span>';

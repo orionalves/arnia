@@ -10,11 +10,11 @@ function goToPage (page) {
     window.location.href=page 
 }
 
-function openMedicalAnotation (medicalAnotation, event) {
-    if (!event.target.classList.contains('see-more') && !event.target.classList.contains('points-menu') ) { 
-        goToPage(medicalAnotation); }
+function openMedicalAnotation (event) {
+    if (!event.target.classList.contains('see-more') && !event.target.classList.contains('points-menu') && !event.target.closest('.options-points-menu')) { 
+        goToPage('./medicalAnotation.html')
+    }
 }
-
 
 // const expand = (questionId) => {
 //     const question = document.getElementById(questionId)

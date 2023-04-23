@@ -2,7 +2,7 @@
     position: absolute;
     left: 0;
     margin-top: 1rem;
-    max-height: 77vh;
+    height: 77vh;
 }
 
 .success {
@@ -351,3 +351,28 @@ main h2 {
     display: flex;
     gap: 0.5rem;
 }
+
+.options-points-menu {
+    width: 11rem;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    right: 1.5rem;
+    top: 3rem;
+    z-index: 1;
+}
+
+.options-points-menu div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* .options-points-menu .blue:hover,  .options-points-menu .red:hover{
+    font-weight: 700;
+} */

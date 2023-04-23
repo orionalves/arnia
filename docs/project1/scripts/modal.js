@@ -9,6 +9,7 @@ const showPatient = document.querySelector('#show-patient')
 const newSession = document.querySelector('#new-session')
 const relevantFact = document.querySelector('#relevant-fact')
 const editSession = document.querySelector('#edit-session')
+const editFact = document.querySelector('#edit-fact')
 
 // Abre o modal
 function openModal(element) {
@@ -22,13 +23,6 @@ function closeModal() {
     // Atualiza a página
     location.reload()
 }
-
-// atualizar a página quando clicar no modal
-document.addEventListener('click', function(e) {
-    if (e.target === modal && !e.target.hasAttribute('dont-close')) {
-        closeModal()
-    }
-});
 
 function success (element, success ) {
     element.classList.add('none')
