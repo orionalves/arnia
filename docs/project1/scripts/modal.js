@@ -8,6 +8,7 @@ const editPatient = document.querySelector('#edit-patient')
 const showPatient = document.querySelector('#show-patient')
 const newSession = document.querySelector('#new-session')
 const relevantFact = document.querySelector('#relevant-fact')
+const editSession = document.querySelector('#edit-session')
 
 // Abre o modal
 function openModal(element) {

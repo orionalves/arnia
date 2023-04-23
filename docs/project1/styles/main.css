@@ -250,6 +250,7 @@ main h2 {
     position: fixed;
     bottom: 1rem;
     left: 50%;
+    transform: translateX(-50%);
     align-items: center;
     gap: 1rem;
     color: #212121;
@@ -312,6 +313,9 @@ main h2 {
     background-color: #FFFFFF;
     padding: 1.5rem;
     color: #000000;
+    border: 1px solid #E0E0E0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     position: relative;
 }
 
@@ -338,4 +342,12 @@ main h2 {
 .payment>div p:first-child{
     color: #757575;
     margin-bottom: 0.3rem;
+}
+
+.full-anotations .edition {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
 }

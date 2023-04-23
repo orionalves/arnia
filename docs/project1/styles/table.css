@@ -63,7 +63,7 @@ tbody {
     border: 1px solid #EB5757;
 }
 
-table img:hover {
+table img:hover, .icon {
     cursor: pointer;
 }
 
