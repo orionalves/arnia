@@ -4,7 +4,7 @@ const createRegister = document.querySelector('#success-create')
 const editRegister = document.querySelector('#success-edit')
 const deleteRegister = document.querySelector('#success-delete')
 const newPatient = document.querySelector('#new-patient')
-const editPatient = document.querySelector('#edit-patient')
+const editPatients = document.querySelector('#edit-patient')
 const showPatient = document.querySelector('#show-patient')
 const newSession = document.querySelector('#new-session')
 const relevantFact = document.querySelector('#relevant-fact')
@@ -12,10 +12,23 @@ const editSession = document.querySelector('#edit-session')
 const editFact = document.querySelector('#edit-fact')
 
 // Abre o modal
-function openModal(element) {
+function openModal(element, id) {
+    getPatient (id)
     // Remove a classe none
     modal.classList.remove('none')
     element.classList.remove('none')
+}
+
+function showPatientForms(id) {
+    getPatient (id)
+    modal.classList.remove('none')
+    showPatient.classList.remove('none')
+}
+
+function editPatientForms(id) {
+    editPatient (id)
+    modal.classList.remove('none')
+    editPatients.classList.remove('none')
 }
 
 // Fecha o modal

@@ -54,7 +54,7 @@
                         <button class="button-search" type="button"><img src="../images/icons/magnifying-glass.svg" alt="magnifying glass">Filtrar</button>
                     </form>
                 </div>
-                <table>
+                <table id="patients-table">
                     <thead class="montserrat-16">
                         <tr>
                             <th class="code" id="code-th">Código</th>
@@ -64,89 +64,13 @@
                         </tr>
                     </thead>
                     <tbody class="montserrat-16">
-                        <tr>
-                            <td class="code" onclick="openModal(showPatient)">28</td>
-                            <td onclick="openModal(showPatient)">Ana Maria</td>
-                            <td class="cpf-td" onclick="openModal(showPatient)">885.012.130-00</td>
-                            <td class="actions">
-                                <div class="icons-wrapper">
-                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
-                                        alt="medical record button" onclick="goToPage('./medicalRecord.html')">
-                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editPatient)">
-                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="code">55</td>
-                            <td>Ana Clara</td>
-                            <td class="cpf-td">885.012.130-00</td>
-                            <td class="actions">
-                                <div class="icons-wrapper">
-                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
-                                        alt="medical record button">
-                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button">
-                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
-                                </div>
-                            </td>
-                        </tr>
-                        <td class="code">2452</td>
-                        <td>Cesar Pinheiro</td>
-                        <td class="cpf-td">885.012.130-00</td>
-                        <td class="actions">
-                            <div class="icons-wrapper">
-                                <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
-                                    alt="medical record button">
-                                <img class="icon-edit" src="../images/icons/edit.png" alt="edit button">
-                                <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
-                            </div>
-                        </td>
-                        </tr>
-                        <tr>
-                            <td class="code">42</td>
-                            <td>Carlos Eduardo</td>
-                            <td class="cpf-td">885.012.130-00</td>
-                            <td class="actions">
-                                <div class="icons-wrapper">
-                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
-                                        alt="medical record button">
-                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button">
-                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
-                                </div>
-                            </td>
-                        </tr>
-                        <td class="code">2248</td>
-                        <td>Silvia Moreira</td>
-                        <td class="cpf-td">885.012.130-00</td>
-                        <td class="actions">
-                            <div class="icons-wrapper">
-                                <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
-                                    alt="medical record button">
-                                <img class="icon-edit" src="../images/icons/edit.png" alt="edit button">
-                                <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
-                            </div>
-                        </td>
-                        </tr>
-                        <tr>
-                            <td class="code">24</td>
-                            <td>Wander Martins</td>
-                            <td class="cpf-td">885.012.130-00</td>
-                            <td class="actions">
-                                <div class="icons-wrapper">
-                                    <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
-                                        alt="medical record button">
-                                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button">
-                                    <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="openModal(deleteRegister)">
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
     <div class="none center" id="modal">
-        <div class="none form-patients" id="new-patient">
+        <!-- <div class="none form-patients" id="new-patient">
             <div class="title">
                 <h1 class="montserrat-24">Novo paciente</h1>
                 <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
@@ -231,173 +155,10 @@
                     <button class="button-dark" type="button" onclick="success (newPatient, createRegister)">Criar</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="none form-patients" id="show-patient">
-            <div class="title">
-                <div class="title-icon">
-                    <h1 class="montserrat-24">Dados do paciente</h1>
-                    <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="success (showPatient, editPatient)">
-                </div>
-                <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="cpf">CPF</label>
-                    <input class="input" type="text" name="CPF" id="cpf" placeholder="Digite" value="885.012.130-00" readonly>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="name">Nome</label>
-                    <input class="input" type="text" name="Nome" id="name" placeholder="Digite" value="Ana Maria" readonly>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="birthday">Data de Nascimento</label>
-                    <input class="input" type="text" name="Data-de-Nascimento" id="birthday" placeholder="Digite" value="10/09/1998" readonly>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="email">E-mail</label>
-                    <input class="input" type="text" name="E-mail" id="email" placeholder="Digite" value="ana@gmail.com" readonly>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="sex-gender">Sexo/Gênero</label>
-                    <select class="input  select" name="Sexo-Gênero" id="sex-gender" disabled>
-                        <option value="" disabled>Escolha</option>
-                        <option value="option1">Masculino</option>
-                        <option value="option2" selected>Feminino</option>
-                        <option value="option3">Outros</option>
-                    </select>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="nationality">Nacionalidade</label>
-                    <select class="input  select" name="Nacionalidade" id="nationality" disabled>
-                        <option value="" disabled>Escolha</option>
-                        <option value="option1" selected>Brasileiro(a)</option>
-                        <option value="option2">Estrangeiro(a)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="place-of-birth">Naturalidade</label>
-                    <input class="input" type="text" name="Naturalidade" id="place-of-birth" placeholder="Digite" value="Belo Horizonte" readonly>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="occupation">Profissão</label>
-                    <input class="input" type="text" name="Profissão" id="occupation" placeholder="Digite" value="Engenheira" readonly>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="education">Escolaridade</label>
-                    <input class="input" type="text" name="Escolaridade" id="education" placeholder="Digite" value="Ensino Superior" readonly>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="marital-status">Estado Civil</label>
-                    <select class="input  select" name="Estado-Civil" id="marital-status" placeholder="Escolha" disabled>
-                        <option value="" disabled>Escolha</option>
-                        <option value="option1" selected>Solteiro(a)</option>
-                        <option value="option2">Casado(a)</option>
-                        <option value="option3">Separado(a)</option>
-                        <option value="option4">Divorciado(a)</option>
-                        <option value="option5">Viúvo(a)</option>
-                    </select>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="mother">Mãe</label>
-                    <input class="input" type="text" name="Mãe" id="mother" placeholder="Digite" value="Lurdes Silva" readonly>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="father">Pai</label>
-                    <input class="input" type="text" name="Pai" id="father" placeholder="Digite" value="Sandro Silva" readonly>
-                </div>
-            </div>
         </div>
         <div class="none form-patients" id="edit-patient">
-            <div class="title">
-                <h1 class="montserrat-24">Editar dados do paciente</h1>
-                <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="cpf">CPF</label>
-                    <input class="input" type="text" name="CPF" id="cpf" placeholder="Digite" value="885.012.130-00">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="name">Nome</label>
-                    <input class="input" type="text" name="Nome" id="name" placeholder="Digite" value="Ana Maria">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="birthday">Data de Nascimento</label>
-                    <input class="input" type="text" name="Data-de-Nascimento" id="birthday" placeholder="Digite" value="10/09/1998">
-                </div>
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="email">E-mail</label>
-                    <input class="input" type="text" name="E-mail" id="email" placeholder="Digite" value="ana@gmail.com">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="sex-gender">Sexo/Gênero</label>
-                    <select class="input  select" name="Sexo-Gênero" id="sex-gender" >
-                        <option value="" disabled selected>Escolha</option>
-                        <option value="option1">Masculino</option>
-                        <option value="option2" selected>Feminino</option>
-                        <option value="option3">Outros</option>
-                    </select>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="nationality">Nacionalidade</label>
-                    <select class="input  select" name="Nacionalidade" id="nationality">
-                        <option value="" disabled selected>Escolha</option>
-                        <option value="option1" selected>Brasileiro(a)</option>
-                        <option value="option2">Estrangeiro(a)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="place-of-birth">Naturalidade</label>
-                    <input class="input" type="text" name="Naturalidade" id="place-of-birth" placeholder="Digite" value="Belo Horizonte">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="occupation">Profissão</label>
-                    <input class="input" type="text" name="Profissão" id="occupation" placeholder="Digite" value="Engenheira">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="education">Escolaridade</label>
-                    <input class="input" type="text" name="Escolaridade" id="education" placeholder="Digite" value="Ensino Superior">
-                </div>
-            </div>
-            <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="marital-status">Solteiro(a)</label>
-                    <select class="input  select" name="Estado-Civil" id="marital-status" placeholder="Escolha">
-                        <option value="" disabled selected>Escolha</option>
-                        <option value="option1" selected>Solteiro(a)</option>
-                        <option value="option2">Casado(a)</option>
-                        <option value="option3">Separado(a)</option>
-                        <option value="option4">Divorciado(a)</option>
-                        <option value="option5">Viúvo(a)</option>
-                    </select>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="mother">Mãe</label>
-                    <input class="input" type="text" name="Mãe" id="mother" placeholder="Digite" value="Lurdes Silva">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="father">Pai</label>
-                    <input class="input" type="text" name="Pai" id="father" placeholder="Digite" value="Sandro Silva">
-                </div>
-            </div>
-            <hr>
-            <div class="save">
-                <p class="poppins-14">*Campos obrigatórios</p>
-                <div class="confirm">
-                    <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                    <button class="button-dark" type="button" onclick="success (editPatient, editRegister)">Salvar alterações</button>
-                </div>
-            </div>
         </div>
         <div class="none success" id="success-create">
             <img src="../images/check-mark-success.gif" alt="check mark success">
