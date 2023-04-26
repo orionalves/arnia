@@ -19,11 +19,21 @@ function openModal(element, id) {
     element.classList.remove('none')
 }
 
+function openForm(form, id = '') {
+    modal.classList.remove('none')
+    form (id)
+}
+
 function showPatientForms(id) {
-    getPatient (id)
+    patientData (id)
     modal.classList.remove('none')
     showPatient.classList.remove('none')
 }
+// function showPatientForms(id) {
+//     getPatient (id)
+//     modal.classList.remove('none')
+//     showPatient.classList.remove('none')
+// }
 
 function editPatientForms(id) {
     editPatient (id)

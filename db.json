@@ -2,7 +2,7 @@
   "patients": [
     {
       "cpf": "738.222.259-58",
-      "name": "Ana Maria",
+      "name": "Ana Mariana",
       "birthday": "29/10/1982",
       "email": "ana@gmail.com",
       "gender": "Feminino",
@@ -10,7 +10,7 @@
       "placeOfBirth": "Belo Horizonte",
       "job": "Arquiteta",
       "education": "Ensino Superior",
-      "maritalStatus": "Solteiro(a)",
+      "maritalStatus": "Separado(a)",
       "mother": "Lurdes Silva",
       "father": "Sandro Silva",
       "id": "28"
@@ -85,7 +85,7 @@
       "placeOfBirth": "Belo Horizonte",
       "job": "Advogado",
       "education": "Ensino Superior Completo",
-      "maritalStatus": "Casado(a)",
+      "maritalStatus": "Viúvo(a)",
       "mother": "Lurdes Silva",
       "father": "Sandro Silva",
       "id": "24"
