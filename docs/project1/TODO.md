@@ -19,10 +19,10 @@
 [v] - Finalizar o html estático
 [v] - Iniciar o CRUD
 [v] - GET
-[] - PUT
-[] - POST
-[] - DELETE
-[] - Finalizar o CRUD
+[v] - PUT
+[v] - POST
+[v] - DELETE
+[v] - Finalizar o CRUD
 [] - Finalizar os ítens obrigatórios
 [] - Refatorar o código
 [] - Usar o find para acessar criar o login

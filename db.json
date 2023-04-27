@@ -1,8 +1,23 @@
 {
   "patients": [
     {
+      "cpf": "000.000.000-00",
+      "name": "Fulano de Tal",
+      "birthday": "11/11/1999",
+      "email": "fulano@de.tal",
+      "gender": "Masculino",
+      "nationality": "Brasileiro(a)",
+      "placeOfBirth": "Salvador",
+      "job": "Surfista",
+      "education": "Ensino superior completo",
+      "maritalStatus": "Separado(a)",
+      "mother": "Fulana de Tal",
+      "father": "Cicrano de Tal",
+      "id": 1
+    },
+    {
       "cpf": "738.222.259-58",
-      "name": "Ana Mariana",
+      "name": "Ana Maria",
       "birthday": "29/10/1982",
       "email": "ana@gmail.com",
       "gender": "Feminino",
@@ -13,7 +28,7 @@
       "maritalStatus": "Separado(a)",
       "mother": "Lurdes Silva",
       "father": "Sandro Silva",
-      "id": "28"
+      "id": 28
     },
     {
       "cpf": "397.808.305-24",
@@ -28,7 +43,7 @@
       "maritalStatus": "Casado(a)",
       "mother": "Marta Oliveira",
       "father": "João Oliveira",
-      "id": "55"
+      "id": 55
     },
     {
       "cpf": "657.719.151-01",
@@ -43,7 +58,7 @@
       "maritalStatus": "Solteiro(a)",
       "mother": "Lurdes Silva",
       "father": "Sandro Silva",
-      "id": "2452"
+      "id": 2452
     },
     {
       "cpf": "926.888.572-10",
@@ -58,7 +73,7 @@
       "maritalStatus": "Solteiro(a)",
       "mother": "Mariana Pereira",
       "father": "Carlos Santos",
-      "id": "42"
+      "id": 42
     },
     {
       "cpf": "962.883.913-56",
@@ -73,7 +88,7 @@
       "maritalStatus": "Solteiro(a)",
       "mother": "Julia Moreira",
       "father": "Paulo Moreira",
-      "id": "2248"
+      "id": 2248
     },
     {
       "cpf": "963.027.730-21",
@@ -88,17 +103,31 @@
       "maritalStatus": "Viúvo(a)",
       "mother": "Lurdes Silva",
       "father": "Sandro Silva",
-      "id": "24"
+      "id": 24
+    },
+    {
+      "cpf": "",
+      "name": "Ana Ester Resende",
+      "birthday": "10/09/2000",
+      "email": "",
+      "gender": "Feminino",
+      "nationality": "Brasileiro(a)",
+      "placeOfBirth": "",
+      "job": "Designer",
+      "education": "Superior incompleto",
+      "maritalStatus": "Solteiro(a)",
+      "mother": "",
+      "father": "",
+      "id": 2453
     }
   ],
-  "posts": [
-    {}
-  ],
-  "user": {
-    "username": "orion",
-    "name": "Orion de Carvalho Costa Alves",
-    "email": "orion@github.com",
-    "password": "aA!1aA!1",
-    "id": "1"
-  }
+  "user": [
+    {
+      "username": "orion",
+      "name": "Orion de Carvalho Costa Alves",
+      "email": "orion@github.com",
+      "password": "aA!1aA!1",
+      "id": 1
+    }
+  ]
 }

@@ -14,10 +14,11 @@
     <script src="../scripts/seeMore.js" defer></script>
     <script src="../scripts/backToTop.js" defer></script>
     <script src="../scripts/medicalRecord.js" defer></script>
+    <script src="../scripts/api.js" defer></script>
     <title>Wexer Psi | Medical Record</title>
 </head>
 
-<body>
+<body onload="showIdentification (new URLSearchParams(window.location.search).get('id'))">
     <header>
         <div class="logo-to-go-back">
             <div class="logo-icon">
@@ -57,38 +58,9 @@
                 </form>
             </div>
             <div class="flex">
-                <div class="patient-identification montserrat-16">
+                <div class="patient-identification montserrat-16" id="patient-identification">
                     <h3>Identificação do paciente</h3>
-                    <div>
-                        <div class="img-title">
-                            <img src="../images/icons/user.png" alt="user icon">
-                            <h4>Paciente</h4>
-                        </div>
-                        <p>Ana Ester Resende</p>
-                    </div>
-                    <div>
-                        <div class="img-title">
-                            <img src="../images/icons/calendar.png" alt="calendar icon">
-                            <h4>Nascimento</h4>
-                        </div>
-                        <p>10/09/2000</p>
-                    </div>
-                    <div>
-                        <div class="img-title">
-                            <img src="../images/icons/business.png" alt="business case">
-                            <h4>Profissão</h4>
-                        </div>
-                        <p>Designer</p>
-                    </div>
-                    <div>
-                        <div class="img-title">
-                            <img src="../images/icons/document.png" alt="document icon">
-                            <h4>Escolaridade</h4>
-                        </div>
-                        <div>
-                            <p>Superior incompleto</p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="right-content">
                     <div class="session-relevant-fact">

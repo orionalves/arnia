@@ -11,29 +11,21 @@ const relevantFact = document.querySelector('#relevant-fact')
 const editSession = document.querySelector('#edit-session')
 const editFact = document.querySelector('#edit-fact')
 
-// Abre o modal
-function openModal(element, id) {
-    getPatient (id)
-    // Remove a classe none
+function openModal(element) {
     modal.classList.remove('none')
     element.classList.remove('none')
 }
 
-function openForm(form, id = '') {
-    modal.classList.remove('none')
-    form (id)
-}
+// function openForm(form, id = '') {
+//     modal.classList.remove('none')
+//     form (id)
+// }
 
 function showPatientForms(id) {
     patientData (id)
     modal.classList.remove('none')
     showPatient.classList.remove('none')
 }
-// function showPatientForms(id) {
-//     getPatient (id)
-//     modal.classList.remove('none')
-//     showPatient.classList.remove('none')
-// }
 
 function editPatientForms(id) {
     editPatient (id)
@@ -41,13 +33,12 @@ function editPatientForms(id) {
     editPatients.classList.remove('none')
 }
 
-// Fecha o modal
 function closeModal() {
     // Atualiza a página
     location.reload()
 }
 
-function success (element, success ) {
+function success (element, success) {
     element.classList.add('none')
     success.classList.remove('none')
 }

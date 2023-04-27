@@ -14,7 +14,7 @@
     <title>Wexer Psi | Patient</title>
 </head>
 
-<body>
+<body onload="showPatients ()">
     <header>
         <div class="logo-icon">
             <img src="../images/logo-icon.png" alt="logo icon">
@@ -42,7 +42,7 @@
             <h2 class="comfortaa-24">Meus pacientes</h2>
             <div class="my-patients">
                 <div class="flex">
-                    <button class="button-icon-text" type="button" onclick="openModal(newPatient)">
+                    <button class="button-icon-text" type="button" onclick="newPatients ()">
                         <img src="../images/icons/plus.svg" alt="plus">
                         Novo Cadastro
                     </button>
@@ -80,7 +80,7 @@
                 <p class="poppins-14">*Campos obrigatórios</p>
                 <div class="confirm">
                     <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                    <button class="button-dark" type="button" onclick="success (newPatient, createRegister)">Criar</button>
+                    <button class="button-dark" type="submit">Criar</button>
                 </div>
             </div>
         </form>
