@@ -233,19 +233,12 @@ const getMedicalRecordId = async (id) => {
 
 const showMedicalRecordFilter = async (id, type) => {
     const allMedicalRecords = await getMedicalRecordFilter(id, type)
+    medicalRecordBoxContainer.innerHTML = ''
     allMedicalRecords.forEach((medicalRecord) => {
-        // const rightContent = document.querySelector('.right-content')
         const medicalRecordBox = document.createElement("div")
         medicalRecordBox.classList.add('medical-record')
         medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
         medicalRecordBox.setAttribute('onclick', 'openMedicalAnotation(event);')
-        // medicalRecordBox.onclick="openMedicalAnotation(event)"
-        // if (medicalRecord.type === "Sessão") {
-        //     medicalRecordBox.classList.add('session-box')
-        // } else {
-        //     medicalRecordBox.classList.add('fact-relevant-box')
-        // }
-        // rightContent.appendChild(medicalRecordBox)
         medicalRecordBoxContainer.appendChild(medicalRecordBox)
         medicalRecordBox.innerHTML += newMedicalRecordBox(medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
     })
@@ -253,20 +246,12 @@ const showMedicalRecordFilter = async (id, type) => {
 
 const showMedicalRecord = async (id) => {
     const allMedicalRecords = await getMedicalRecord(id)
+    medicalRecordBoxContainer.innerHTML = ''
     allMedicalRecords.forEach((medicalRecord) => {
-        // const rightContent = document.querySelector('.right-content')
         const medicalRecordBox = document.createElement("div")
         medicalRecordBox.classList.add('medical-record')
         medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
         medicalRecordBox.setAttribute('onclick', 'openMedicalAnotation(event);')
-        // medicalRecordBox.onclick="openMedicalAnotation(event)"
-        // if (medicalRecord.type === "Sessão") {
-        //     medicalRecordBox.classList.add('session-box')
-        // } else {
-        //     medicalRecordBox.classList.add('fact-relevant-box')
-        // }
-        
-        // rightContent.appendChild(medicalRecordBox)
         medicalRecordBoxContainer.appendChild(medicalRecordBox)
         medicalRecordBox.innerHTML += newMedicalRecordBox (medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
     })
@@ -276,9 +261,11 @@ const getPatients = async (id = '') => {
     const apiResponse = await fetch(`http://localhost:3000/patients/${id}`);
     return await apiResponse.json()
 }
-const getPatientFiltered = async (name) => {
-    const apiResponse = await fetch(`http://localhost:3000/patients?name_like=${name}`);
-    return await apiResponse.json()
+
+const getPatientFiltered = async (find) => {
+    const regexName = /^(\p{L}+[- ']?)+$/u
+    const apiResponse = await fetch(regexName.test(find) ? `http://localhost:3000/patients?name_like=${find}` : `http://localhost:3000/patients?cpf_like=${find}`)
+    return await apiResponse.json();
 }
 
 // Método POST
@@ -327,7 +314,6 @@ const filterPatients = async (name) => {
 
 filter.addEventListener('submit', event => {
     event.preventDefault()
-    console.log(filter.querySelector('#input-search').value)
     filterPatients(filter.querySelector('#input-search').value)
 })
 
