@@ -1,18 +1,18 @@
 {
   "patients": [
     {
-      "cpf": "000.000.000-00",
-      "name": "Fulano de Tal",
-      "birthday": "11/11/1999",
+      "cpf": "02704914575",
+      "name": "oreon",
+      "birthday": "18/11/1987",
       "email": "fulano@de.tal",
       "gender": "Masculino",
       "nationality": "Brasileiro(a)",
       "placeOfBirth": "Salvador",
       "job": "Surfista",
       "education": "Ensino superior completo",
-      "maritalStatus": "Separado(a)",
-      "mother": "Fulana de Tal",
-      "father": "Cicrano de Tal",
+      "maritalStatus": "Casado(a)",
+      "mother": "sóg",
+      "father": "sôg",
       "id": 1
     },
     {
@@ -109,7 +109,7 @@
       "cpf": "",
       "name": "Ana Ester Resende",
       "birthday": "10/09/2000",
-      "email": "",
+      "email": "ana@ester.resende",
       "gender": "Feminino",
       "nationality": "Brasileiro(a)",
       "placeOfBirth": "",
@@ -119,6 +119,47 @@
       "mother": "",
       "father": "",
       "id": 2453
+    }
+  ],
+  "medicalRecorder": [
+    {
+      "title": "Sessão 02",
+      "type": "Sessão",
+      "date": "22/09/2022",
+      "start": "16:00",
+      "end": "17:00",
+      "abstract": "A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.",
+      "value": "R$ 200,00",
+      "paymentFormat": "PIX",
+      "paymentStatus": "Pago",
+      "patient_id": 2453,
+      "id": 3
+    },
+    {
+      "title": "Fato relevante",
+      "type": "Fato relevante",
+      "date": "22/09/2022",
+      "start": "",
+      "end": "",
+      "abstract": "Cliente não compareceu.",
+      "value": "",
+      "paymentFormat": "",
+      "paymentStatus": "",
+      "patient_id": 2453,
+      "id": 2
+    },
+    {
+      "title": "Sessão 01",
+      "type": "Sessão",
+      "date": "22/09/2022",
+      "start": "16:00",
+      "end": "17:00",
+      "abstract": "A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.",
+      "value": "R$ 200,00",
+      "paymentFormat": "PIX",
+      "paymentStatus": "Pago",
+      "patient_id": 2453,
+      "id": 1
     }
   ],
   "user": [

@@ -11,14 +11,14 @@
     <script src="../scripts/modal.js" defer></script>
     <script src="../scripts/onClick.js" defer></script>
     <script src="../scripts/radio.js" defer></script>
-    <script src="../scripts/seeMore.js" defer></script>
     <script src="../scripts/backToTop.js" defer></script>
-    <script src="../scripts/medicalRecord.js" defer></script>
     <script src="../scripts/api.js" defer></script>
+    <script src="../scripts/medicalRecord.js" defer></script>
+    <script src="../scripts/seeMore.js" defer></script>
     <title>Wexer Psi | Medical Record</title>
 </head>
 
-<body onload="showIdentification (new URLSearchParams(window.location.search).get('id'))">
+<body onload="showIdentification (new URLSearchParams(window.location.search).get('id')); showMedicalRecord (new URLSearchParams(window.location.search).get('id'))">
     <header>
         <div class="logo-to-go-back">
             <div class="logo-icon">
@@ -52,7 +52,7 @@
                     <label for="search">
                         Pesquisar
                     </label>
-                    <input type="text" name="search" placeholder="Pesquisar" id="search">
+                    <input type="text" name="search" placeholder="Pesquisar" id="search-medical-record">
                     <button class="button-search" type="button"><img src="../images/icons/magnifying-glass.svg"
                             alt="magnifying glass">Filtrar</button>
                 </form>
@@ -85,6 +85,7 @@
                             <p class="montserrat-16">Fato Relevante</p>
                         </div>
                     </div>
+                    <div id="medical-record-box-container"></div>
                     <div class="medical-record session-box" onclick="openMedicalAnotation(event)">
                         <div class="vertical"></div>
                         <div class="circle">
@@ -154,121 +155,122 @@
             <div class="none center" id="modal">
                 <div class="none new-session" id="new-session">
                     <div class="title">
-                    <h1 class="montserrat-24">Nova Sessão</h1>
-                    <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                        <h1 class="montserrat-24">Nova Sessão</h1>
+                        <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
                     </div>
                     <div class="scroll-wrapper">
                         <div class="number-title">
-                        <div class="green-circle montserrat-18">1</div>
-                        <h4 class="montserrat-18">Dados Gerais</h4>
+                            <div class="green-circle montserrat-18">1</div>
+                            <h4 class="montserrat-18">Dados Gerais</h4>
                         </div>
                         <div class="fields">
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="date">Data*</label>
-                            <input class="input" type="text" name="Data" id="date" placeholder="Digite">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="start">Hora de início*</label>
-                            <input class="input" type="text" name="Hora-de-início" id="start" placeholder="Digite">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="end">Hora fim*</label>
-                            <input class="input" type="text" name="Hora-fim" id="end" placeholder="Digite">
-                        </div>
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="date">Data*</label>
+                                <input class="input" type="text" name="Data" id="date" placeholder="Digite">
+                            </div>
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="start">Hora de início*</label>
+                                <input class="input" type="text" name="Hora-de-início" id="start" placeholder="Digite">
+                            </div>
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="end">Hora fim*</label>
+                                <input class="input" type="text" name="Hora-fim" id="end" placeholder="Digite">
+                            </div>
                         </div>
                         <hr>
                         <div class="number-title">
-                        <div class="green-circle montserrat-18">2</div>
-                        <h4 class="montserrat-18">Sessão</h4>
+                            <div class="green-circle montserrat-18">2</div>
+                            <h4 class="montserrat-18">Sessão</h4>
                         </div>
                         <div class="form-field roboto-form-16">
-                        <label class="label" for="end">Título*</label>
-                        <input class="input" type="text" name="Título" id="end" placeholder="Digite">
+                            <label class="label" for="end">Título*</label>
+                            <input class="input" type="text" name="Título" id="end" placeholder="Digite">
                         </div>
                         <div class="form-field roboto-form-16">
-                        <label class="label" for="session-summary">Resumo da sessão*</label>
-                        <textarea class="textarea" name="Resumo-da-sessão" id="session-summary" placeholder="Texto"></textarea>
+                            <label class="label" for="session-summary">Resumo da sessão*</label>
+                            <textarea class="textarea" name="Resumo-da-sessão" id="session-summary" placeholder="Texto"></textarea>
                         </div>
                         <hr>
                         <div class="number-title">
-                        <div class="green-circle montserrat-18">3</div>
-                        <h4 class="montserrat-18">Dados Gerais</h4>
+                            <div class="green-circle montserrat-18">3</div>
+                            <h4 class="montserrat-18">Dados Gerais</h4>
                         </div>
                         <div class="fields">
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="value">Valor</label>
-                            <input class="input" type="text" name="Valor" id="value" placeholder="Digite">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="payment">Forma de pagamento</label>
-                            <select class="input select" name="Forma-de-pagamento" id="payment">
-                                <option value="not-paid">Não pago</option>
-                                <option value="pix">PIX</option>
-                                <option value="debit">Débito</option>
-                                <option value="credit">Crédito</option>
-                            </select>
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <p>Status</p>
-                            <div class="flex">
-                                <div class="radio">
-                                    <input type="radio" id="paid" name="payment">
-                                    <label for="paid">Pago</label>
-                                </div>
-                                <div class="radio">
-                                    <input type="radio" id="not-paid" name="payment">
-                                    <label for="not-paid">Não pago</label>
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="value">Valor</label>
+                                <input class="input" type="text" name="Valor" id="value" placeholder="Digite">
+                            </div>
+                            <div class="form-field roboto-form-16">
+                                <label class="label" for="payment">Forma de pagamento</label>
+                                <select class="input select" name="Forma-de-pagamento" id="payment">
+                                    <option value="not-paid">Não pago</option>
+                                    <option value="pix">PIX</option>
+                                    <option value="debit">Débito</option>
+                                    <option value="credit">Crédito</option>
+                                </select>
+                            </div>
+                            <div class="form-field roboto-form-16">
+                                <p>Status</p>
+                                <div class="flex">
+                                    <div class="radio">
+                                        <input type="radio" id="paid" name="payment">
+                                        <label for="paid">Pago</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="not-paid" name="payment">
+                                        <label for="not-paid">Não pago</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="montserrat-14">
-                        <img src="" alt="">
-                        <P><span class="strong">Dica: </span>Registrar os pagamentos das sessões irá te <br> auxiliar na sua organização financeira.
-                        </P>
-                    </div>
-                    </div>
-                    <div class="bottom">
-                    <hr>
-                    <div class="save">
-                        <p class="poppins-14">*Campos obrigatórios</p>
-                        <div class="confirm">
-                            <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                            <button class="button-dark" type="button" onclick="closeModal ()">Criar</button>
+                        <div class="montserrat-14">
+                            <img src="" alt="">
+                            <P><span class="strong">Dica: </span>Registrar os pagamentos das sessões irá te <br> auxiliar na sua
+                                organização financeira.
+                            </P>
                         </div>
                     </div>
+                    <div class="bottom">
+                        <hr>
+                        <div class="save">
+                            <p class="poppins-14">*Campos obrigatórios</p>
+                            <div class="confirm">
+                                <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
+                                <button class="button-dark" type="button" onclick="closeModal ()">Criar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="none relevant-fact" id="relevant-fact">
                     <div class="title">
-                    <h1 class="montserrat-24">Novo Fato Relevante</h1>
-                    <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                        <h1 class="montserrat-24">Novo Fato Relevante</h1>
+                        <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
                     </div>
-                        <div class="fields">
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="date">Data*</label>
-                                <input class="input" type="text" name="date" id="date" placeholder="Digite">
-                            </div>
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="title">Título*</label>
-                                <input class="input" type="text" name="title" id="title" placeholder="Digite">
-                            </div>
+                    <div class="fields">
+                        <div class="form-field roboto-form-16">
+                            <label class="label" for="date">Data*</label>
+                            <input class="input" type="text" name="date" id="date" placeholder="Digite">
                         </div>
-                        <div class="fields">
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="description">Descrição*</label>
-                                <textarea class="textarea" name="description" id="description" placeholder="Texto"></textarea>
-                            </div>
+                        <div class="form-field roboto-form-16">
+                            <label class="label" for="title">Título*</label>
+                            <input class="input" type="text" name="title" id="title" placeholder="Digite">
                         </div>
+                    </div>
+                    <div class="fields">
+                        <div class="form-field roboto-form-16">
+                            <label class="label" for="description">Descrição*</label>
+                            <textarea class="textarea" name="description" id="description" placeholder="Texto"></textarea>
+                        </div>
+                    </div>
                     <div class="bottom">
-                    <hr>
-                    <div class="save">
-                        <p class="poppins-14">*Campos obrigatórios</p>
-                        <div class="confirm">
-                            <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                            <button class="button-dark" type="button" onclick="closeModal ()">Criar</button>
+                        <hr>
+                        <div class="save">
+                            <p class="poppins-14">*Campos obrigatórios</p>
+                            <div class="confirm">
+                                <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
+                                <button class="button-dark" type="button" onclick="closeModal ()">Criar</button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
                 <div class="none new-session" id="edit-session">

@@ -1,4 +1,5 @@
 const patientsTable = document.querySelector('#patients-table tbody')
+const filter = document.querySelector('#search')
 
 function newTr (id, cpf, name) {
     const newTr = `
@@ -16,6 +17,35 @@ function newTr (id, cpf, name) {
             </td>
         </tr>`
     return newTr
+}
+
+function newMedicalRecordBox (id, type, title, date, abstract) {
+    let img = ''
+    if (type === "Sessão") {
+        img = '<img src="../images/icons/white-head-heart.png" alt="head wiht haert"></img>'
+    } else {
+        img = '<img src="../images/icons/white-pin.png" alt="pin"></img>'
+    }
+    const newMedicalRecordBox = `
+                        <div class="vertical"></div>
+                        <div class="circle">
+                            ${img}
+                        </div>
+                        <div class="points-menu montserrat-18" >...</div>
+                        <div class="none options-points-menu">
+                            <div class="blue" onclick="openModal(editSession)">
+                                <img class="icon" src="../images/icons/edit02.png" alt="edit button">
+                                <p class="montserrat-16">Editar</p>
+                            </div>
+                            <div class="red" onclick="openModal(deleteRegister)">
+                                <img class="icon" src="../images/icons/delete02.png" alt="delete">
+                                <p class="montserrat-16">Excluir</p>
+                            </div>
+                        </div>
+                        <h4 class="montserrat-18">${title}</h4>
+                        <p class="montserrat-14">${date}</p>
+                        <p class="montserrat-16 text">${abstract}</p>`
+    return newMedicalRecordBox
 }
 
 function patientForm (cpf, name, birthday, email, gender, nationality, placeOfBirth, job, education, maritalStatus, mother, father) {
@@ -130,6 +160,8 @@ function pacienteIdentification (name, birthday, job, education) {
         return identification
 }
 
+
+
 function medicalRecordPage (id) {
     window.location.assign(`./medicalRecord.html?id=${id}`);
 }
@@ -184,16 +216,68 @@ function newPatients () {
     });
 }
 
-//Método GET
-//Esse método pega os dados da api
-//Usa uma função assíncrona e espera a api responder
+const getMedicalRecord = async (id) => {
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecorder?patient_id=${id}`);
+    return await apiResponse.json()
+}
+
+const getMedicalRecordFilter = async (id, type) => {
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecorder?patient_id=${id}&type=${type}`);
+    return await apiResponse.json()
+}
+
+const getMedicalRecordId = async (id) => {
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecorder${id}`);
+    return await apiResponse.json()
+}
+
+const showMedicalRecordFilter = async (id, type) => {
+    const allMedicalRecords = await getMedicalRecordFilter(id, type)
+    allMedicalRecords.forEach((medicalRecord) => {
+        // const rightContent = document.querySelector('.right-content')
+        const medicalRecordBox = document.createElement("div")
+        medicalRecordBox.classList.add('medical-record')
+        medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
+        medicalRecordBox.setAttribute('onclick', 'openMedicalAnotation(event);')
+        // medicalRecordBox.onclick="openMedicalAnotation(event)"
+        // if (medicalRecord.type === "Sessão") {
+        //     medicalRecordBox.classList.add('session-box')
+        // } else {
+        //     medicalRecordBox.classList.add('fact-relevant-box')
+        // }
+        // rightContent.appendChild(medicalRecordBox)
+        medicalRecordBoxContainer.appendChild(medicalRecordBox)
+        medicalRecordBox.innerHTML += newMedicalRecordBox(medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
+    })
+}
+
+const showMedicalRecord = async (id) => {
+    const allMedicalRecords = await getMedicalRecord(id)
+    allMedicalRecords.forEach((medicalRecord) => {
+        // const rightContent = document.querySelector('.right-content')
+        const medicalRecordBox = document.createElement("div")
+        medicalRecordBox.classList.add('medical-record')
+        medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
+        medicalRecordBox.setAttribute('onclick', 'openMedicalAnotation(event);')
+        // medicalRecordBox.onclick="openMedicalAnotation(event)"
+        // if (medicalRecord.type === "Sessão") {
+        //     medicalRecordBox.classList.add('session-box')
+        // } else {
+        //     medicalRecordBox.classList.add('fact-relevant-box')
+        // }
+        
+        // rightContent.appendChild(medicalRecordBox)
+        medicalRecordBoxContainer.appendChild(medicalRecordBox)
+        medicalRecordBox.innerHTML += newMedicalRecordBox (medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
+    })
+}
+
 const getPatients = async (id = '') => {
     const apiResponse = await fetch(`http://localhost:3000/patients/${id}`);
     return await apiResponse.json()
 }
-
-const getMedicalRecorder = async (id = '') => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecorder/${id}?_expand=patients`);
+const getPatientFiltered = async (name) => {
+    const apiResponse = await fetch(`http://localhost:3000/patients?name_like=${name}`);
     return await apiResponse.json()
 }
 
@@ -233,9 +317,23 @@ const deletePatient = async (id) => {
     openModal(deleteRegister)
 }
 
+const filterPatients = async (name) => {
+    const allPatients = await getPatientFiltered(name)
+    patientsTable.innerHTML = ''
+    allPatients.forEach((patient) => {
+        patientsTable.innerHTML += newTr (patient.id, patient.cpf, patient.name)
+    })
+}
+
+filter.addEventListener('submit', event => {
+    event.preventDefault()
+    console.log(filter.querySelector('#input-search').value)
+    filterPatients(filter.querySelector('#input-search').value)
+})
+
 const showPatients = async () => {
-    // Cria a variável patient, com dados inviduais de cada paciente
     const allPatients = await getPatients()
+    patientsTable.innerHTML = ''
     allPatients.forEach((patient) => {
         patientsTable.innerHTML += newTr (patient.id, patient.cpf, patient.name)
     })
