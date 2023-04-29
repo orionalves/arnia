@@ -5,7 +5,7 @@ const optionsMenuLine = document.querySelector('#options-menu-line')
 const filterRule = document.querySelector('#filter-rule')
 filterRule.textContent = optionsMenuLine.querySelector('.selected').textContent
 const medicalRecords = document.querySelectorAll('.medical-record');
-const medicalRecordBoxContainer = document.querySelector('medical-record-box-container')
+const medicalRecordBoxContainer = document.querySelector('#medical-record-box-container')
 
 medicalRecords.forEach(medicalRecord => {
     const pointsMenu = medicalRecord.querySelector('.points-menu');
@@ -35,24 +35,13 @@ filterMenu.addEventListener('click', function() {
             event.target.classList.add('selected')
             filterRule.textContent = event.target.textContent
             if (filterRule.textContent === 'Sessão') {
-                medicalRecordBoxContainer.innerHTML = ''
-                // medicalRecords.forEach(record => record.remove());
-                // document.querySelectorAll('.medical-record').remove()
                 showMedicalRecordFilter (new URLSearchParams(window.location.search).get('id'), 'Sessão')
-                // factRelevantBox.forEach(box => box.classList.add('none'));
-                // sessionsBox.forEach(box => box.classList.remove('none'));
             } else if (filterRule.textContent === 'Fato Relevante' ) {
                 medicalRecords.forEach(record => record.remove());
-                medicalRecordBoxContainer.innerHTML = ''
                 showMedicalRecordFilter (new URLSearchParams(window.location.search).get('id'), 'Fato relevante')
-                // sessionsBox.forEach(box => box.classList.add('none'));
-                // factRelevantBox.forEach(box => box.classList.remove('none'));
             } else {
-                medicalRecordBoxContainer.innerHTML = ''
                 medicalRecords.forEach(record => record.remove());
                 showMedicalRecord (new URLSearchParams(window.location.search).get('id'))
-                // sessionsBox.forEach(box => box.classList.remove('none'));
-                // factRelevantBox.forEach(box => box.classList.remove('none'));
             }
         }
     })
