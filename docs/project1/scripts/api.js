@@ -20,20 +20,15 @@ function newTr (id, cpf, name) {
 }
 
 function newMedicalRecordBox (id, type, title, date, abstract) {
-    let img = ''
-    if (type === "Sessão") {
-        img = '<img src="../images/icons/white-head-heart.png" alt="head wiht haert"></img>'
-    } else {
-        img = '<img src="../images/icons/white-pin.png" alt="pin"></img>'
-    }
+    const img = (type === 'Sessão') ? '<img src="../images/icons/white-head-heart.png" alt="head wiht haert"></img>' : '<img src="../images/icons/white-pin.png" alt="pin"></img>'
     const newMedicalRecordBox = `
                         <div class="vertical"></div>
                         <div class="circle">
                             ${img}
                         </div>
-                        <div class="points-menu montserrat-18" >...</div>
-                        <div class="none options-points-menu">
-                            <div class="blue" onclick="openModal(editSession)">
+                        <div class="points-menu montserrat-18" onclick="optionsPointsMenu.classList.remove('none')">...</div>
+                            <div class="none options-points-menu">
+                            <div class="blue" onclick="openModal(editSession, ${id})">
                                 <img class="icon" src="../images/icons/edit02.png" alt="edit button">
                                 <p class="montserrat-16">Editar</p>
                             </div>
@@ -46,6 +41,35 @@ function newMedicalRecordBox (id, type, title, date, abstract) {
                         <p class="montserrat-14">${date}</p>
                         <p class="montserrat-16 text">${abstract}</p>`
     return newMedicalRecordBox
+}
+
+function medicalAnotation (id, type, title, date, start, end, abstract, value, paymentFormat, paymentStatus) {
+    const anotationData = (type === 'Sessão') ? `<p class="montserrat-14">${date} | ${start}h - ${end}h</p>` : `<p class="montserrat-14">${date}</p>`
+    const payment = `
+    <h4 class="montserrat-16">Pagamento</h4>
+    <div class="payment montserrat-12">
+        <div>
+            <p>Valor</p>
+            <p>R$${value}</p>
+        </div>
+        <div>
+            <p>Forma de pagamento</p>
+            <p>${paymentFormat}</p>
+        </div>
+        <div>
+            <p>Status</p>
+            <p>${paymentStatus}</p>
+        </div>
+    </div>`
+    const fullAnotation = `
+            <div class="edition">
+                <img class="icon icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editSession)">
+                <img class="icon icon-delete" src="../images/icons/delete.png" alt="delete" onclick="openModal(deleteRegister)">
+            </div>
+            <h3 class="montserrat-18">${title}</h3>
+                ${anotationData}
+            <p class="montserrat-16">${abstract}</p>`
+    return (type === 'Sessão') ? fullAnotation + payment : fullAnotation
 }
 
 function patientForm (cpf, name, birthday, email, gender, nationality, placeOfBirth, job, education, maritalStatus, mother, father) {
@@ -160,8 +184,6 @@ function pacienteIdentification (name, birthday, job, education) {
         return identification
 }
 
-
-
 function medicalRecordPage (id) {
     window.location.assign(`./medicalRecord.html?id=${id}`);
 }
@@ -227,9 +249,22 @@ const getMedicalRecordFilter = async (id, type) => {
 }
 
 const getMedicalRecordId = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecorder${id}`);
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecorder/${id}`);
     return await apiResponse.json()
 }
+
+const showAnotations = async (id) => {
+    const fullAnotationContent = await getMedicalRecordId(id)
+    const anotations = document.querySelector('#full-anotation')
+    // console.log (anotations)
+    anotations.innerHTML = ''
+    anotations.innerHTML = medicalAnotation (fullAnotationContent.id, fullAnotationContent.type, fullAnotationContent.title, fullAnotationContent.date, fullAnotationContent.start, fullAnotationContent.end, fullAnotationContent.abstract, fullAnotationContent.value, fullAnotationContent.paymentFormat, fullAnotationContent.paymentStatus)
+    // fullAnotationContent.forEach((anotaition) => {
+    //     medicalAnotation (id, type, title, date, start, end, abstract, value, paymentFormat, paymentStatus)
+    // })
+
+}
+
 
 const showMedicalRecordFilter = async (id, type) => {
     const allMedicalRecords = await getMedicalRecordFilter(id, type)
@@ -238,9 +273,22 @@ const showMedicalRecordFilter = async (id, type) => {
         const medicalRecordBox = document.createElement("div")
         medicalRecordBox.classList.add('medical-record')
         medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
-        medicalRecordBox.setAttribute('onclick', 'openMedicalAnotation(event);')
+        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id});`)
         medicalRecordBoxContainer.appendChild(medicalRecordBox)
         medicalRecordBox.innerHTML += newMedicalRecordBox(medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
+    })
+    const lateMedicalRecords = document.querySelectorAll('.medical-record');
+    lateMedicalRecords.forEach(medicalRecord => {
+        const pointsMenu = medicalRecord.querySelector('.points-menu');
+        const optionsPointsMenu = medicalRecord.querySelector('.options-points-menu');
+        pointsMenu.addEventListener('click', event => {
+            optionsPointsMenu.classList.remove('none');
+            document.addEventListener('click', function(event) {
+                if (!pointsMenu.contains(event.target) && event.target !== optionsPointsMenu) {
+                    optionsPointsMenu.classList.add('none')
+                }
+            });
+        });
     })
 }
 
@@ -251,10 +299,24 @@ const showMedicalRecord = async (id) => {
         const medicalRecordBox = document.createElement("div")
         medicalRecordBox.classList.add('medical-record')
         medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
-        medicalRecordBox.setAttribute('onclick', 'openMedicalAnotation(event);')
+        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id});`)
         medicalRecordBoxContainer.appendChild(medicalRecordBox)
         medicalRecordBox.innerHTML += newMedicalRecordBox (medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
     })
+    const lateMedicalRecords = document.querySelectorAll('.medical-record');
+    lateMedicalRecords.forEach(medicalRecord => {
+        const pointsMenu = medicalRecord.querySelector('.points-menu');
+        const optionsPointsMenu = medicalRecord.querySelector('.options-points-menu');
+        pointsMenu.addEventListener('click', event => {
+            optionsPointsMenu.classList.remove('none');
+            document.addEventListener('click', function(event) {
+                if (!pointsMenu.contains(event.target) && event.target !== optionsPointsMenu) {
+                    optionsPointsMenu.classList.add('none')
+                }
+            });
+        });
+    })
+
 }
 
 const getPatients = async (id = '') => {

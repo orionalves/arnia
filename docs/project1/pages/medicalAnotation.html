@@ -10,10 +10,11 @@
     <script src="../scripts/ballon.js" defer></script>
     <script src="../scripts/onClick.js" defer></script>
     <script src="../scripts/modal.js" defer></script>
+    <script src="../scripts/api.js" defer></script>
     <title>Wexer Psi | Medical Record</title>
 </head>
 
-<body>
+<body onload="showAnotations (new URLSearchParams(window.location.search).get('id'))">
     <header>
         <div class="logo-to-go-back">
             <div class="logo-icon">
@@ -43,10 +44,10 @@
         </div>
     </header>
     <main>
-        <div class="medical-anotations">
+        <div class="medical-anotations" id="medical-anotations">
             <h2 class="comfortaa-24">Prontuário</h2>
-            <div class="full-anotations">
-                <div class="edition">
+            <div class="full-anotations" id="full-anotation">
+                <!-- <div class="edition">
                     <img class="icon icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editSession)">
                     <img class="icon icon-delete" src="../images/icons/delete.png" alt="delete" onclick="openModal(deleteRegister)">
                 </div>
@@ -68,7 +69,7 @@
                         <p>Status</p>
                         <p>Pago</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>

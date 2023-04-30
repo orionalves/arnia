@@ -6,19 +6,42 @@ const filterRule = document.querySelector('#filter-rule')
 filterRule.textContent = optionsMenuLine.querySelector('.selected').textContent
 const medicalRecords = document.querySelectorAll('.medical-record');
 const medicalRecordBoxContainer = document.querySelector('#medical-record-box-container')
+// const optionsPointsMenu = document.querySelector('.options-points-menu')
 
-medicalRecords.forEach(medicalRecord => {
-    const pointsMenu = medicalRecord.querySelector('.points-menu');
-    const optionsPointsMenu = medicalRecord.querySelector('.options-points-menu');
-    pointsMenu.addEventListener('click', event => {
-        optionsPointsMenu.classList.remove('none');
-        document.addEventListener('click', function(event) {
-            if (!pointsMenu.contains(event.target) && event.target !== optionsPointsMenu) {
-                optionsPointsMenu.classList.add('none')
-            }
-        });
-    });
-});
+
+// windows.addEventListener('load', () => {
+//     medicalRecordBoxContainer.querySelectorAll('.medical-record').forEach(medicalRecord => {
+//         console.log(medicalRecordBoxContainer);
+//         const pointsMenu = medicalRecord.querySelector('.points-menu');
+//         console.log(pointsMenu);
+//         const optionsPointsMenu = medicalRecord.querySelector('.options-points-menu');
+//         console.log(optionsPointsMenu);
+//     });
+// });
+
+// medicalRecords.forEach(medicalRecord => {
+//     const pointsMenu = medicalRecord.querySelector('.points-menu');
+//     console.log(pointsMenu)
+//     const optionsPointsMenu = medicalRecord.querySelector('.options-points-menu');
+//     console.log(optionsPointsMenu)
+// })
+
+// medicalRecords.forEach(medicalRecord => {
+//     const pointsMenu = medicalRecord.querySelector('.points-menu');
+//     console.log(pointsMenu)
+//     const optionsPointsMenu = medicalRecord.querySelector('.options-points-menu');
+//     console.log(optionsPointsMenu)
+//     pointsMenu.addEventListener('click', event => {
+//         console.log(pointsMenu)
+//         console.log(optionsPointsMenu)
+//         optionsPointsMenu.classList.remove('none');
+//         document.addEventListener('click', function(event) {
+//             if (!pointsMenu.contains(event.target) && event.target !== optionsPointsMenu) {
+//                 optionsPointsMenu.classList.add('none')
+//             }
+//         });
+//     });
+// });
 
 document.addEventListener('click', function(event) {
     if (!filterMenu.contains(event.target) && event.target !== optionsMenuLine) {

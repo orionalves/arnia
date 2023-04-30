@@ -10,9 +10,10 @@ function goToPage (page) {
     window.location.href=page 
 }
 
-function openMedicalAnotation (event) {
+function openMedicalAnotation (event, id) {
     if (!event.target.classList.contains('see-more') && !event.target.classList.contains('points-menu') && !event.target.closest('.options-points-menu')) { 
-        goToPage('./medicalAnotation.html')
+        window.location.assign(`./medicalAnotation.html?id=${id}`);
+        // goToPage(`./medicalAnotation.html?id=${id}`)
     }
 }
 
