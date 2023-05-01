@@ -53,8 +53,7 @@
                         Pesquisar
                     </label>
                     <input type="text" name="search" placeholder="Pesquisar" id="search-medical-record">
-                    <button class="button-search" type="button"><img src="../images/icons/magnifying-glass.svg"
-                            alt="magnifying glass">Filtrar</button>
+                    <button class="button-search" type="button" onclick="filterMedicalRecord (document.querySelector('#search-medical-record').value)"><img src="../images/icons/magnifying-glass.svg" alt="magnifying glass">Filtrar</button>
                 </form>
             </div>
             <div class="flex">
@@ -64,11 +63,11 @@
                 </div>
                 <div class="right-content">
                     <div class="session-relevant-fact">
-                        <div class="flex" onclick="openModal(newSession)">
+                        <div class="flex" onclick="newMedicalRecord ('Sessão')">
                             <img src="../images/icons/head-heart.png" alt="head wiht haert">
                             <h3 class="montserrat-16">Sessão</h3>
                         </div>
-                        <div class="flex" onclick="openModal(relevantFact)">
+                        <div class="flex" onclick="newMedicalRecord ('Fato relevante')">
                             <img src="../images/icons/pin.png" alt="pin">
                             <h3 class="montserrat-16">Fato relevante</h3>
                         </div>
@@ -86,322 +85,44 @@
                         </div>
                     </div>
                     <div id="medical-record-box-container"></div>
-                    <!-- <div id="medical-record-box-container"></div>
-                    <div class="medical-record session-box" onclick="openMedicalAnotation(event)">
-                        <div class="vertical"></div>
-                        <div class="circle">
-                            <img src="../images/icons/white-head-heart.png" alt="head wiht haert">
-                        </div>
-                        <div class="points-menu montserrat-18" >...</div>
-                        <div class="none options-points-menu">
-                            <div class="blue" onclick="openModal(editSession)">
-                                <img class="icon" src="../images/icons/edit02.png" alt="edit button">
-                                <p class="montserrat-16">Editar</p>
-                            </div>
-                            <div class="red" onclick="openModal(deleteRegister)">
-                                <img class="icon" src="../images/icons/delete02.png" alt="delete">
-                                <p class="montserrat-16">Excluir</p>
-                            </div>
-                        </div>
-                        <h4 class="montserrat-18">Sessão 02</h4>
-                        <p class="montserrat-14">22 de setembro de 2022</p>
-                        <p class="montserrat-16 text">A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. 
-                            A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.</p>
-                    </div>
-                    <div class="medical-record fact-relevant-box">
-                        <div class="vertical"></div>
-                        <div class="circle">
-                            <img src="../images/icons/white-pin.png" alt="pin">
-                        </div>
-                        <div class="points-menu montserrat-18">...</div>
-                        <div class="none options-points-menu">
-                            <div class="blue" onclick="openModal(editFact)">
-                                <img class="icon" src="../images/icons/edit02.png" alt="edit button">
-                                <p class="montserrat-16">Editar</p>
-                            </div>
-                            <div class="red" onclick="openModal(deleteRegister)">
-                                <img class="icon" src="../images/icons/delete02.png" alt="delete">
-                                <p class="montserrat-16">Excluir</p>
-                            </div>
-                        </div>
-                        <h4 class="montserrat-18">Fato relevante</h4>
-                        <p class="montserrat-14">15 de setembro de 2022</p>
-                        <p class="montserrat-16 text">Cliente não compareceu.</p>
-                    </div>
-                    <div class="medical-record session-box">
-                        <div class="vertical"></div>
-                        <div class="circle">
-                            <img src="../images/icons/white-head-heart.png" alt="head wiht haert">
-                        </div>
-                        <div class="points-menu montserrat-18" >...</div>
-                        <div class="none options-points-menu">
-                            <div class="blue" onclick="openModal(editSession)">
-                                <img class="icon" src="../images/icons/edit02.png" alt="edit button">
-                                <p class="montserrat-16">Editar</p>
-                            </div>
-                            <div class="red" onclick="openModal(deleteRegister)">
-                                <img class="icon" src="../images/icons/delete02.png" alt="delete">
-                                <p class="montserrat-16">Excluir</p>
-                            </div>
-                        </div>
-                        <h4 class="montserrat-18">Sessão 01</h4>
-                        <p class="montserrat-14">01 de setembro de 2022</p>
-                        <p class="montserrat-16 text">A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. 
-                            A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.</p>
-                    </div> -->
                 </div>
             </div>
         </div>
     </main>
             <div class="none center" id="modal">
-                <div class="none new-session" id="new-session">
+                <form class="none new-session" id="new-session">
                     <div class="title">
                         <h1 class="montserrat-24">Nova Sessão</h1>
-                        <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                        <img class="x" src="../images/icons/x.png" alt="x" onclick="location.reload()">
                     </div>
-                    <div class="scroll-wrapper">
-                        <div class="number-title">
-                            <div class="green-circle montserrat-18">1</div>
-                            <h4 class="montserrat-18">Dados Gerais</h4>
-                        </div>
-                        <div class="fields">
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="date">Data*</label>
-                                <input class="input" type="text" name="Data" id="date" placeholder="Digite">
-                            </div>
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="start">Hora de início*</label>
-                                <input class="input" type="text" name="Hora-de-início" id="start" placeholder="Digite">
-                            </div>
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="end">Hora fim*</label>
-                                <input class="input" type="text" name="Hora-fim" id="end" placeholder="Digite">
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="number-title">
-                            <div class="green-circle montserrat-18">2</div>
-                            <h4 class="montserrat-18">Sessão</h4>
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="end">Título*</label>
-                            <input class="input" type="text" name="Título" id="end" placeholder="Digite">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="session-summary">Resumo da sessão*</label>
-                            <textarea class="textarea" name="Resumo-da-sessão" id="session-summary" placeholder="Texto"></textarea>
-                        </div>
-                        <hr>
-                        <div class="number-title">
-                            <div class="green-circle montserrat-18">3</div>
-                            <h4 class="montserrat-18">Dados Gerais</h4>
-                        </div>
-                        <div class="fields">
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="value">Valor</label>
-                                <input class="input" type="text" name="Valor" id="value" placeholder="Digite">
-                            </div>
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="payment">Forma de pagamento</label>
-                                <select class="input select" name="Forma-de-pagamento" id="payment">
-                                    <option value="not-paid">Não pago</option>
-                                    <option value="pix">PIX</option>
-                                    <option value="debit">Débito</option>
-                                    <option value="credit">Crédito</option>
-                                </select>
-                            </div>
-                            <div class="form-field roboto-form-16">
-                                <p>Status</p>
-                                <div class="flex">
-                                    <div class="radio">
-                                        <input type="radio" id="paid" name="payment">
-                                        <label for="paid">Pago</label>
-                                    </div>
-                                    <div class="radio">
-                                        <input type="radio" id="not-paid" name="payment">
-                                        <label for="not-paid">Não pago</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="montserrat-14">
-                            <img src="" alt="">
-                            <P><span class="strong">Dica: </span>Registrar os pagamentos das sessões irá te <br> auxiliar na sua
-                                organização financeira.
-                            </P>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <hr>
-                        <div class="save">
-                            <p class="poppins-14">*Campos obrigatórios</p>
-                            <div class="confirm">
-                                <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                                <button class="button-dark" type="button" onclick="closeModal ()">Criar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="none relevant-fact" id="relevant-fact">
+                </form>
+                <form class="none relevant-fact" id="relevant-fact">
                     <div class="title">
                         <h1 class="montserrat-24">Novo Fato Relevante</h1>
-                        <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                        <img class="x" src="../images/icons/x.png" alt="x" onclick="location.reload()">
                     </div>
-                    <div class="fields">
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="date">Data*</label>
-                            <input class="input" type="text" name="date" id="date" placeholder="Digite">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="title">Título*</label>
-                            <input class="input" type="text" name="title" id="title" placeholder="Digite">
-                        </div>
-                    </div>
-                    <div class="fields">
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="description">Descrição*</label>
-                            <textarea class="textarea" name="description" id="description" placeholder="Texto"></textarea>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <hr>
-                        <div class="save">
-                            <p class="poppins-14">*Campos obrigatórios</p>
-                            <div class="confirm">
-                                <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                                <button class="button-dark" type="button" onclick="closeModal ()">Criar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="none new-session" id="edit-session">
+                </form>
+                <form class="none new-session" id="edit-session">
                     <div class="title">
-                    <h1 class="montserrat-24">Editar Sessão</h1>
-                    <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                        <h1 class="montserrat-24">Editar Sessão</h1>
+                        <img class="x" src="../images/icons/x.png" alt="x" onclick="location.reload()">
                     </div>
-                    <div class="scroll-wrapper">
-                        <div class="number-title">
-                        <div class="green-circle montserrat-18">1</div>
-                        <h4 class="montserrat-18">Dados Gerais</h4>
-                        </div>
-                        <div class="fields">
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="date">Data*</label>
-                            <input class="input" type="text" name="Data" id="date" placeholder="Digite" value="22/09/2022">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="start">Hora de início*</label>
-                            <input class="input" type="text" name="Hora-de-início" id="start" placeholder="Digite" value="16:00">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="end">Hora fim*</label>
-                            <input class="input" type="text" name="Hora-fim" id="end" placeholder="Digite" value="17:00">
-                        </div>
-                        </div>
-                        <hr>
-                        <div class="number-title">
-                        <div class="green-circle montserrat-18">2</div>
-                        <h4 class="montserrat-18">Sessão</h4>
-                        </div>
-                        <div class="form-field roboto-form-16">
-                        <label class="label" for="end">Título*</label>
-                        <input class="input" type="text" name="Título" id="end" placeholder="Digite" value="Sessão 02">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                        <label class="label" for="session-summary">Resumo da sessão*</label>
-                        <textarea class="textarea" name="Resumo-da-sessão" id="session-summary" placeholder="Texto">A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.</textarea>
-                        </div>
-                        <hr>
-                        <div class="number-title">
-                        <div class="green-circle montserrat-18">3</div>
-                        <h4 class="montserrat-18">Dados Gerais</h4>
-                        </div>
-                        <div class="fields">
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="value">Valor</label>
-                            <input class="input" type="text" name="Valor" id="value" placeholder="Digite" value="R$ 200,00">
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <label class="label" for="payment">Forma de pagamento</label>
-                            <select class="input select" name="Forma-de-pagamento" id="payment">
-                                <option value="not-paid">Não pago</option>
-                                <option value="pix" selected>PIX</option>
-                                <option value="debit">Débito</option>
-                                <option value="credit">Crédito</option>
-                            </select>
-                        </div>
-                        <div class="form-field roboto-form-16">
-                            <p>Status</p>
-                            <div class="flex">
-                                <div class="radio">
-                                    <input type="radio" id="paid" name="payment" checked>
-                                    <label for="paid">Pago</label>
-                                </div>
-                                <div class="radio">
-                                    <input type="radio" id="not-paid" name="payment">
-                                    <label for="not-paid">Não pago</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="montserrat-14">
-                        <img src="" alt="">
-                        <P><span class="strong">Dica: </span>Registrar os pagamentos das sessões irá te <br> auxiliar na sua organização financeira.
-                        </P>
-                    </div>
-                    </div>
-                    <div class="bottom">
-                    <hr>
-                    <div class="save">
-                        <p class="poppins-14">*Campos obrigatórios</p>
-                        <div class="confirm">
-                            <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                            <button class="button-dark" type="button" onclick="success (editSession, editRegister)">Salvar</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="none relevant-fact" id="edit-fact">
+                </form>
+                <form class="none relevant-fact" id="edit-fact">
                     <div class="title">
-                    <h1 class="montserrat-24">Editar Fato Relevante</h1>
-                    <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                        <h1 class="montserrat-24">Editar Fato Relevante</h1>
+                        <img class="x" src="../images/icons/x.png" alt="x" onclick="location.reload()">
                     </div>
-                        <div class="fields">
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="date">Data*</label>
-                                <input class="input" type="text" name="date" id="date" placeholder="Digite" value="15/09/2022">
-                            </div>
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="title">Título*</label>
-                                <input class="input" type="text" name="title" id="title" placeholder="Digite" value="Fato relevante">
-                            </div>
-                        </div>
-                        <div class="fields">
-                            <div class="form-field roboto-form-16">
-                                <label class="label" for="description">Descrição*</label>
-                                <textarea class="textarea" name="description" id="description" placeholder="Texto">Cliente não compareceu.</textarea>
-                            </div>
-                        </div>
-                    <div class="bottom">
-                    <hr>
-                    <div class="save">
-                        <p class="poppins-14">*Campos obrigatórios</p>
-                        <div class="confirm">
-                            <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                            <button class="button-dark" type="button" onclick="success (editFact, editRegister)"">Salvar</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="none success" id="success-edit">
+                </form>
+                <div class="none success" id="success-register">
                     <img src="../images/check-mark-success.gif" alt="check mark success">
                     <p class="comfortaa-24">Registro salvo com sucesso!</p>
-                    <button class="button-dark" type="button" onclick="closeModal ()">Ok</button>
+                    <button class="button-dark" type="button" onclick="location.reload()">Ok</button>
                 </div>
                 <div class="none success" id="success-delete">
                     <img src="../images/check-mark-success.gif" alt="check mark success">
                     <p class="comfortaa-24">Registro deletado com sucesso!</p>
-                    <button class="button-dark" type="button" onclick="closeModal ()">Ok</button>
+                    <button class="button-dark" type="button" onclick="location.reload()">Ok</button>
                 </div>
             </div>
         </div>

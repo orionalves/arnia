@@ -231,6 +231,11 @@
     height: 3rem;
     gap: 0;
 }
+
+.image-text {
+    display: flex;
+    gap: 0.5rem;
+}
   
 [type="radio"]{
     -webkit-appearance: none;

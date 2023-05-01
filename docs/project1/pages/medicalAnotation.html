@@ -47,129 +47,31 @@
         <div class="medical-anotations" id="medical-anotations">
             <h2 class="comfortaa-24">Prontuário</h2>
             <div class="full-anotations" id="full-anotation">
-                <!-- <div class="edition">
-                    <img class="icon icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="openModal(editSession)">
-                    <img class="icon icon-delete" src="../images/icons/delete.png" alt="delete" onclick="openModal(deleteRegister)">
-                </div>
-                <h3 class="montserrat-18">Sessão 02</h3>
-                <p class="montserrat-14">22 de setembro de 2022 | 16:00h - 17:00h</p>
-                <p class="montserrat-16">A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. 
-                    A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico. </p>
-                <h4 class="montserrat-16">Pagamento</h4>
-                <div class="payment montserrat-12">
-                    <div>
-                        <p>Valor</p>
-                        <p>R$200,00</p>
-                    </div>
-                    <div>
-                        <p>Forma de pagamento</p>
-                        <p>PIX</p>
-                    </div>
-                    <div>
-                        <p>Status</p>
-                        <p>Pago</p>
-                    </div>
-                </div> -->
             </div>
         </div>
     </main>
     <div class="none center" id="modal">
-        <div class="none new-session" id="edit-session">
+        <form class="none new-session" id="edit-session">
             <div class="title">
-            <h1 class="montserrat-24">Editar Sessão</h1>
-            <img class="x" src="../images/icons/x.png" alt="x" onclick="closeModal ()">
+                <h1 class="montserrat-24">Editar Sessão</h1>
+                <img class="x" src="../images/icons/x.png" alt="x" onclick="location.reload()">
             </div>
-            <div class="scroll-wrapper">
-                <div class="number-title">
-                <div class="green-circle montserrat-18">1</div>
-                <h4 class="montserrat-18">Dados Gerais</h4>
-                </div>
-                <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="date">Data*</label>
-                    <input class="input" type="text" name="Data" id="date" placeholder="Digite" value="22/09/2022">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="start">Hora de início*</label>
-                    <input class="input" type="text" name="Hora-de-início" id="start" placeholder="Digite" value="16:00">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="end">Hora fim*</label>
-                    <input class="input" type="text" name="Hora-fim" id="end" placeholder="Digite" value="17:00">
-                </div>
-                </div>
-                <hr>
-                <div class="number-title">
-                <div class="green-circle montserrat-18">2</div>
-                <h4 class="montserrat-18">Sessão</h4>
-                </div>
-                <div class="form-field roboto-form-16">
-                <label class="label" for="end">Título*</label>
-                <input class="input" type="text" name="Título" id="end" placeholder="Digite" value="Sessão 02">
-                </div>
-                <div class="form-field roboto-form-16">
-                <label class="label" for="session-summary">Resumo da sessão*</label>
-                <textarea class="textarea" name="Resumo-da-sessão" id="session-summary" placeholder="Texto">A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.</textarea>
-                </div>
-                <hr>
-                <div class="number-title">
-                <div class="green-circle montserrat-18">3</div>
-                <h4 class="montserrat-18">Dados Gerais</h4>
-                </div>
-                <div class="fields">
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="value">Valor</label>
-                    <input class="input" type="text" name="Valor" id="value" placeholder="Digite" value="R$ 200,00">
-                </div>
-                <div class="form-field roboto-form-16">
-                    <label class="label" for="payment">Forma de pagamento</label>
-                    <select class="input select" name="Forma-de-pagamento" id="payment">
-                        <option value="not-paid">Não pago</option>
-                        <option value="pix" selected>PIX</option>
-                        <option value="debit">Débito</option>
-                        <option value="credit">Crédito</option>
-                    </select>
-                </div>
-                <div class="form-field roboto-form-16">
-                    <p>Status</p>
-                    <div class="flex">
-                        <div class="radio">
-                            <input type="radio" id="paid" name="payment" checked>
-                            <label for="paid">Pago</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" id="not-paid" name="payment">
-                            <label for="not-paid">Não pago</label>
-                        </div>
-                    </div>
-                </div>
+        </form>
+        <form class="none relevant-fact" id="edit-fact">
+            <div class="title">
+                <h1 class="montserrat-24">Editar Fato Relevante</h1>
+                <img class="x" src="../images/icons/x.png" alt="x" onclick="location.reload()">
             </div>
-            <div class="montserrat-14">
-                <img src="" alt="">
-                <P><span class="strong">Dica: </span>Registrar os pagamentos das sessões irá te <br> auxiliar na sua organização financeira.
-                </P>
-            </div>
-            </div>
-            <div class="bottom">
-            <hr>
-            <div class="save">
-                <p class="poppins-14">*Campos obrigatórios</p>
-                <div class="confirm">
-                    <p class="comfortaa-16" onclick="closeModal ()">Cancelar</p>
-                    <button class="button-dark" type="button" onclick="success (editSession, editRegister)">Salvar</button>
-                </div>
-            </div>
-            </div>
-        </div>
+        </form>
         <div class="none success" id="success-delete">
             <img src="../images/check-mark-success.gif" alt="check mark success">
-            <p class="comfortaa-24">Sessão deletada com sucesso!</p>
-            <button class="button-dark" type="button" onclick="closeModal ()">Ok</button>
+            <p class="comfortaa-24">Prontuário deletado com sucesso!</p>
+            <button class="button-dark" type="button" onclick="window.location.assign('./medicalRecord.html?id='+new URLSearchParams(window.location.search).get('patient_id'))">Ok</button>
         </div>
-        <div class="none success" id="success-edit">
+        <div class="none success" id="success-register">
             <img src="../images/check-mark-success.gif" alt="check mark success">
-            <p class="comfortaa-24">Sessão salva com sucesso!</p>
-            <button class="button-dark" type="button" onclick="closeModal ()">Ok</button>
+            <p class="comfortaa-24">Prontuário salvo com sucesso!</p>
+            <button class="button-dark" type="button" onclick="window.location.assign('./medicalRecord.html?id='+new URLSearchParams(window.location.search).get('patient_id'))">Ok</button>
         </div>
     </div>
 </body>

@@ -1,7 +1,7 @@
 const modal = document.querySelector('#modal')
 const userRegister = document.querySelector('#success-register')
 const createRegister = document.querySelector('#success-create')
-const editRegister = document.querySelector('#success-edit')
+const successRegister = document.querySelector('#success-register')
 const deleteRegister = document.querySelector('#success-delete')
 const newPatient = document.querySelector('#new-patient')
 const editPatients = document.querySelector('#edit-patient')
@@ -16,11 +16,6 @@ function openModal(element) {
     element.classList.remove('none')
 }
 
-// function openForm(form, id = '') {
-//     modal.classList.remove('none')
-//     form (id)
-// }
-
 function showPatientForms(id) {
     patientData (id)
     modal.classList.remove('none')
@@ -34,11 +29,16 @@ function editPatientForms(id) {
 }
 
 function closeModal() {
-    // Atualiza a página
-    location.reload()
+    modal.classList.add('none')
 }
 
 function success (element, success) {
     element.classList.add('none')
     success.classList.remove('none')
+}
+
+function showMedicalRecordForms(id) {
+    // getMedicalRecordId (id)
+    modal.classList.remove('none')
+    showPatient.classList.remove('none')
 }

@@ -23,7 +23,8 @@
 [v] - POST
 [v] - DELETE
 [v] - Finalizar o CRUD
-[] - Finalizar os ítens obrigatórios
+[v] - Finalizar os ítens obrigatórios
+[] - Completar 100% o projeto
+[] - Testar api externa
 [] - Refatorar o código
-[] - Usar o find para acessar criar o login
 [] - Fazer para celular

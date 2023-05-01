@@ -1,9 +1,9 @@
 {
   "patients": [
     {
-      "cpf": "02704914575",
-      "name": "oreon",
-      "birthday": "18/11/1987",
+      "cpf": "330.554.825-22",
+      "name": "Fulano de Tal",
+      "birthday": "19/08/2000",
       "email": "fulano@de.tal",
       "gender": "Masculino",
       "nationality": "Brasileiro(a)",
@@ -121,9 +121,9 @@
       "id": 2453
     }
   ],
-  "medicalRecorder": [
+  "medicalRecord": [
     {
-      "title": "Sessão 02",
+      "title": "Sessão 03",
       "type": "Sessão",
       "date": "22/09/2022",
       "start": "16:00",
@@ -136,12 +136,12 @@
       "id": 3
     },
     {
-      "title": "Fato relevante",
+      "title": "Fato Relevante",
       "type": "Fato relevante",
-      "date": "22/09/2022",
+      "date": "15/09/2022",
       "start": "",
       "end": "",
-      "abstract": "Cliente não compareceu.",
+      "abstract": "A cliente não compareceu.",
       "value": "",
       "paymentFormat": "",
       "paymentStatus": "",
@@ -151,15 +151,67 @@
     {
       "title": "Sessão 01",
       "type": "Sessão",
-      "date": "22/09/2022",
+      "date": "01/09/2022",
       "start": "16:00",
       "end": "17:00",
-      "abstract": "A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.",
+      "abstract": "A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa. A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações muito desafiadoras e entra em pânico.\nOi.",
       "value": "R$ 200,00",
       "paymentFormat": "PIX",
       "paymentStatus": "Pago",
       "patient_id": 2453,
       "id": 1
+    },
+    {
+      "title": "Adicionando Sessão",
+      "type": "Sessão",
+      "date": "30/04/2023",
+      "start": "08:00",
+      "end": "18:42",
+      "abstract": "Trabalhei o dia inteiro e consegui adicionar a sessão.",
+      "value": "R$20,00",
+      "paymentFormat": "Não pago",
+      "paymentStatus": "Não pago",
+      "patient_id": "1",
+      "id": 4
+    },
+    {
+      "title": "Finalizando o projeto",
+      "type": "Fato relevante",
+      "date": "30/04/2023",
+      "start": "",
+      "end": "",
+      "abstract": "Consegui adicionar fato relevante!",
+      "value": "",
+      "paymentFormat": "",
+      "paymentStatus": "",
+      "patient_id": "1",
+      "id": 5
+    },
+    {
+      "title": "não tem nada a ver",
+      "type": "Sessão",
+      "date": "",
+      "start": "",
+      "end": "",
+      "abstract": "",
+      "value": "",
+      "paymentFormat": "Não pago",
+      "paymentStatus": "Pago",
+      "patient_id": "1",
+      "id": 6
+    },
+    {
+      "title": "Tem título",
+      "type": "Fato relevante",
+      "date": "30/04/23",
+      "start": "",
+      "end": "",
+      "abstract": "Esse é um texto",
+      "value": "",
+      "paymentFormat": "",
+      "paymentStatus": "",
+      "patient_id": "1",
+      "id": 7
     }
   ],
   "user": [
