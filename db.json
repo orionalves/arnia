@@ -212,6 +212,19 @@
       "paymentStatus": "",
       "patient_id": "1",
       "id": 7
+    },
+    {
+      "title": "Novo",
+      "type": "Sessão",
+      "date": "",
+      "start": "",
+      "end": "",
+      "abstract": "",
+      "value": "",
+      "paymentFormat": "Débito",
+      "paymentStatus": "Não pago",
+      "patient_id": "1",
+      "id": 8
     }
   ],
   "user": [

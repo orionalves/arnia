@@ -347,17 +347,22 @@ function newPatients () {
 }
 
 const getMedicalRecord = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?patient_id=${id}`);
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?_sort=id&_order=desc&patient_id=${id}`);
     return await apiResponse.json()
 }
 
+const getFilterMedicalRecord = async (find) => {
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecord/?_sort=id&_order=desc&q=${find}`)
+    return await apiResponse.json();
+}
+
 const getMedicalRecordFilter = async (id, type, find) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?patient_id=${id}&type=${type}&q=${find}`);
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?_sort=id&_order=desc&patient_id=${id}&type=${type}&q=${find}`);
     return await apiResponse.json()
 }
 
 const getMedicalRecordFilterAll = async (id, find) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?patient_id=${id}&q=${find}`);
+    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?_sort=id&_order=desc&patient_id=${id}&q=${find}`);
     return await apiResponse.json()
 }
 
@@ -577,7 +582,7 @@ const showMedicalRecordFilterAll = async (id) => {
 }
 
 const filterMedicalRecord = async (find) => {
-    const allMedicalRecords = await getFilter(find, 'medicalRecord')
+    const allMedicalRecords = await getFilterMedicalRecord(find)
     medicalRecordBoxContainer.innerHTML = ''
     allMedicalRecords.forEach((medicalRecord) => {
         if (medicalRecord.patient_id === new URLSearchParams(window.location.search).get('id')) {
@@ -641,6 +646,7 @@ const getFilter = async (find, route) => {
     // const regexName = /^(\p{L}+[-\s']?)+$/u
     // const apiResponse = await fetch(regexName.test(find) ? `http://localhost:3000/patients?name_like=${find}` : `http://localhost:3000/patients?cpf_like=${find}`)
     const apiResponse = await fetch(`http://localhost:3000/${route}?q=${find}`)
+    // const apiResponse = await fetch(`http://localhost:3000/${route}?_sort=id&_order=desc&q=${find}`)
     return await apiResponse.json();
 }
 
@@ -775,7 +781,7 @@ const patientData = async (id) => {
                 father: father.value,
             }
             putPatient(id, editedPatient)
-            success (editPatients, editRegister)
+            success (editPatients, successRegister)
         });
     
     })
@@ -818,7 +824,7 @@ const editPatient = async (id) => {
             father: father.value,
         }
         putPatient(id, editedPatient)
-        success (editPatients, editRegister)
+        success (editPatients, successRegister)
     });
 }
 

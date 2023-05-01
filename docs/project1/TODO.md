@@ -24,6 +24,10 @@
 [v] - DELETE
 [v] - Finalizar o CRUD
 [v] - Finalizar os ítens obrigatórios
+[v] - Ordenar a lista do Prontuário
+[v] - Colocar a linha vertical no Prontuário
+[] - Login
+[] - Cadastro
 [] - Completar 100% o projeto
 [] - Testar api externa
 [] - Refatorar o código

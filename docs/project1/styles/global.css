@@ -13,6 +13,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: absolute;
+    inset: 0;
 }
 
 .red {
@@ -32,3 +34,4 @@ body {
     position: fixed;
     inset: 0;
 }
+
