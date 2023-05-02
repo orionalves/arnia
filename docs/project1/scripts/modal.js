@@ -36,9 +36,3 @@ function success (element, success) {
     element.classList.add('none')
     success.classList.remove('none')
 }
-
-function showMedicalRecordForms(id) {
-    // getMedicalRecordId (id)
-    modal.classList.remove('none')
-    showPatient.classList.remove('none')
-}

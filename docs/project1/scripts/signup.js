@@ -8,7 +8,7 @@ const confirmPassword = document.querySelector('#confirm-password')
 const createUser = document.querySelector('#create-user')
 
 const getUsers = async (email) => {
-    const apiResponse = await fetch(`http://localhost:3000/users/?email=${email}`);
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/users/?email=${email}`);
     const users = await apiResponse.json();
 
     if (users.length !== 0) {
@@ -47,7 +47,7 @@ async function required (email) {
 }
 
 const postUser = async (user) => {
-    await fetch("http://localhost:3000/users", {
+    await fetch("https://arnia-project1.onrender.com/users", {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',

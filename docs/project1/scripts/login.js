@@ -4,7 +4,7 @@ const passwordField = document.querySelector('#password-field')
 const loginForm = document.querySelector('#login-form')
 
 const getUserLogin = async (email, password) => {
-    const apiResponse = await fetch(`http://localhost:3000/users/?email=${email}&password=${password}`)
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/users/?email=${email}&password=${password}`)
     const users = await apiResponse.json()
     const user = users[0]
 

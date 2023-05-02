@@ -347,32 +347,32 @@ function newPatients () {
 }
 
 const getMedicalRecord = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?_sort=id&_order=desc&patient_id=${id}`);
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/medicalRecord?_sort=id&_order=desc&patient_id=${id}`);
     return await apiResponse.json()
 }
 
 const getFilterMedicalRecord = async (find) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord/?_sort=id&_order=desc&q=${find}`)
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/medicalRecord/?_sort=id&_order=desc&q=${find}`)
     return await apiResponse.json();
 }
 
 const getMedicalRecordFilter = async (id, type, find) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?_sort=id&_order=desc&patient_id=${id}&type=${type}&q=${find}`);
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/medicalRecord?_sort=id&_order=desc&patient_id=${id}&type=${type}&q=${find}`);
     return await apiResponse.json()
 }
 
 const getMedicalRecordFilterAll = async (id, find) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord?_sort=id&_order=desc&patient_id=${id}&q=${find}`);
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/medicalRecord?_sort=id&_order=desc&patient_id=${id}&q=${find}`);
     return await apiResponse.json()
 }
 
 const getMedicalRecordId = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/medicalRecord/${id}`);
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/medicalRecord/${id}`);
     return await apiResponse.json()
 }
 
 const putMedicalRecord = async (id, medicalRecord) => {
-    await fetch(`http://localhost:3000/medicalRecord/${id}`, {
+    await fetch(`https://arnia-project1.onrender.com/medicalRecord/${id}`, {
         method: "PUT",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -383,7 +383,7 @@ const putMedicalRecord = async (id, medicalRecord) => {
 }
 
 const createMedicalRecord = async (patient) => {
-    await fetch("http://localhost:3000/medicalRecord/", {
+    await fetch("https://arnia-project1.onrender.com/medicalRecord/", {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -394,7 +394,7 @@ const createMedicalRecord = async (patient) => {
 }
 
 const deleteMedicalRecord = async (id) => {
-    await fetch(`http://localhost:3000/medicalRecord/${id}`, {
+    await fetch(`https://arnia-project1.onrender.com/medicalRecord/${id}`, {
         method: "DELETE"
     })
     // showPatients ()
@@ -665,19 +665,19 @@ const showMedicalRecord = async (id) => {
 }
 
 const getPatients = async (id = '') => {
-    const apiResponse = await fetch(`http://localhost:3000/patients/${id}`);
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/patients/${id}`);
     return await apiResponse.json()
 }
 
 const getFilter = async (find, route) => {
-    const apiResponse = await fetch(`http://localhost:3000/${route}?q=${find}`)
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/${route}?q=${find}`)
     return await apiResponse.json();
 }
 
 // Método POST
 // Esse médodo insere novos dados na api
 const createPatient = async (patient) => {
-    await fetch("http://localhost:3000/patients", {
+    await fetch("https://arnia-project1.onrender.com/patients", {
         method: "POST",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -690,7 +690,7 @@ const createPatient = async (patient) => {
 // Método PUT
 // Esse método edita o conteúdo da chave através do id.
 const putPatient = async (id, patient) => {
-    await fetch(`http://localhost:3000/patients/${id}`, {
+    await fetch(`https://arnia-project1.onrender.com/patients/${id}`, {
         method: "PUT",
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -704,7 +704,7 @@ const putPatient = async (id, patient) => {
 // Método delete
 // Esse médodo deleta dados na api
 const deletePatient = async (id) => {
-    await fetch(`http://localhost:3000/patients/${id}`, {
+    await fetch(`https://arnia-project1.onrender.com/patients/${id}`, {
         method: "DELETE"
     })
     // showPatients ()

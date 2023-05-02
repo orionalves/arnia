@@ -15,7 +15,7 @@ document.addEventListener('click', function(event) {
 });
 
 const getUserLogged = async (id) => {
-    const apiResponse = await fetch(`http://localhost:3000/users/${id}`);
+    const apiResponse = await fetch(`https://arnia-project1.onrender.com/users/${id}`);
     return await apiResponse.json()
 }
 
