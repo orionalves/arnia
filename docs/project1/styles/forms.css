@@ -51,12 +51,6 @@
     width: 100%;
 }
 
-/* #password::-ms-reveal,
-#password::-ms-clear
-{
-    display: none;
-} */
-
 .textarea {
     resize: none;
     padding: 1rem;

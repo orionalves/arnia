@@ -10,7 +10,7 @@ function newTr (id, cpf, name) {
             <td class="actions">
                 <div class="icons-wrapper">
                     <img class="icon-medical-recorder" src="../images/icons/medical-record.png"
-                        alt="medical record button" onclick="medicalRecordPage(${id})">
+                        alt="medical record button" onclick="medicalRecordPage(${id}, new URLSearchParams(window.location.search).get('user_id'))">
                     <img class="icon-edit" src="../images/icons/edit.png" alt="edit button" onclick="editPatientForms(${id}); showIdentification (${id});">
                     <img class="icon-delete" src="../images/icons/delete.png" alt="delete button" onclick="deletePatient (${id})">
                 </div>
@@ -293,8 +293,8 @@ function medicalRecordForm (id, type, title, date, start, end, abstract, value, 
     return (type === 'Sessão') ? sessionForm + bottom : relevantFactForm + bottom
 }
 
-function medicalRecordPage (id) {
-    window.location.assign(`./medicalRecord.html?id=${id}`);
+function medicalRecordPage (id, userId) {
+    window.location.assign(`./medicalRecord.html?id=${id}&user_id=${userId}`);
 }
 
 const showIdentification = async (id) => {
@@ -413,6 +413,18 @@ const showEditMedicalRecord = async (id) => {
     const editMedicalRecordForm = (editMedicalRecord.type === "Sessão") ? document.querySelector('#edit-session') : document.querySelector('#edit-fact')
     editMedicalRecordForm.innerHTML += medicalRecordForm (editMedicalRecord.id, editMedicalRecord.type, editMedicalRecord.title, editMedicalRecord.date, editMedicalRecord.start, editMedicalRecord.end, editMedicalRecord.abstract, editMedicalRecord.value, editMedicalRecord.paymentFormat)
     if (editMedicalRecord.type === "Sessão") {
+        const paymentSelect = document.getElementById("payment");
+        const paidRadio = document.getElementById("paid");
+        const notPaidRadio = document.getElementById("not-paid");
+        paymentSelect.addEventListener("change", function() {
+            if (paymentSelect.value !== "Não pago") {
+                paidRadio.disabled = false;
+                notPaidRadio.disabled = true;
+            } else {
+                paidRadio.disabled = true;
+                notPaidRadio.disabled = false;
+            }
+        });
         document.querySelector('#payment').value = editMedicalRecord.paymentFormat
         if (editMedicalRecord.paymentStatus === "Pago") {
         // Adicione o atributo "checked" ao botão de rádio com id "paid"
@@ -478,6 +490,18 @@ function newMedicalRecord (type) {
     newMedicalRecord.innerHTML += medicalRecordForm ('', type, '', '', '', '', '', '', '')
     if (type === "Sessão") {
         document.querySelector('#payment').value = ''
+        const paymentSelect = document.getElementById("payment");
+        const paidRadio = document.getElementById("paid");
+        const notPaidRadio = document.getElementById("not-paid");
+        paymentSelect.addEventListener("change", function() {
+            if (paymentSelect.value !== "Não pago") {
+                paidRadio.disabled = false;
+                notPaidRadio.disabled = true;
+            } else {
+                paidRadio.disabled = true;
+                notPaidRadio.disabled = false;
+            }
+        });
         openModal(newSession)
     } else {
         openModal(relevantFact)
@@ -536,7 +560,7 @@ const showMedicalRecordFilter = async (id, type) => {
         const medicalRecordBox = document.createElement("div")
         medicalRecordBox.classList.add('medical-record')
         medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
-        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id});`)
+        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id}, new URLSearchParams(window.location.search).get('user_id'));`)
         medicalRecordBoxContainer.appendChild(medicalRecordBox)
         medicalRecordBox.innerHTML += newMedicalRecordBox(medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
     })
@@ -563,7 +587,7 @@ const showMedicalRecordFilterAll = async (id) => {
         const medicalRecordBox = document.createElement("div")
         medicalRecordBox.classList.add('medical-record')
         medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
-        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id});`)
+        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id}, new URLSearchParams(window.location.search).get('user_id'));`)
         medicalRecordBoxContainer.appendChild(medicalRecordBox)
         medicalRecordBox.innerHTML += newMedicalRecordBox(medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
     })
@@ -592,7 +616,7 @@ const filterMedicalRecord = async (find) => {
             const medicalRecordBox = document.createElement("div")
             medicalRecordBox.classList.add('medical-record')
             medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
-            medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id});`)
+            medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id}, new URLSearchParams(window.location.search).get('user_id'));`)
             medicalRecordBoxContainer.appendChild(medicalRecordBox)
             medicalRecordBox.innerHTML += newMedicalRecordBox (medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
         }
@@ -620,7 +644,7 @@ const showMedicalRecord = async (id) => {
         const medicalRecordBox = document.createElement("div")
         medicalRecordBox.classList.add('medical-record')
         medicalRecord.type === "Sessão" ? medicalRecordBox.classList.add('session-box') : medicalRecordBox.classList.add('fact-relevant-box')
-        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id});`)
+        medicalRecordBox.setAttribute('onclick', `openMedicalAnotation(event, ${medicalRecord.id}, ${medicalRecord.patient_id}, new URLSearchParams(window.location.search).get('user_id'));`)
         medicalRecordBoxContainer.appendChild(medicalRecordBox)
         medicalRecordBox.innerHTML += newMedicalRecordBox (medicalRecord.id, medicalRecord.type, medicalRecord.title, medicalRecord.date, medicalRecord.abstract)
     })
@@ -695,44 +719,12 @@ const filterPatients = async (find) => {
     })
 }
 
-filter.addEventListener('submit', event => {
-    event.preventDefault()
-    filterPatients(filter.querySelector('#input-search').value)
-})
-
 const showPatients = async () => {
     const allPatients = await getPatients()
     patientsTable.innerHTML = ''
     allPatients.forEach((patient) => {
         patientsTable.innerHTML += newTr (patient.id, patient.cpf, patient.name)
     })
-}
-
-function fillForm(cpf, name, birthday, email, gender, nationality, placeOfBirth, job, education, maritalStatus, mother, father) {
-    const cpfInput = document.querySelector('#cpf')
-    const nameInput = document.querySelector('#name')
-    const birthdayInput = document.querySelector('#birthday')
-    const emailInput = document.querySelector('#email')
-    const genderSelect = document.querySelector('#gender')
-    const nationalitySelect = document.querySelector('#nationality')
-    const placeOfBirthInput = document.querySelector('#place-of-birth')
-    const occupationInput = document.querySelector('#occupation')
-    const educationInput = document.querySelector('#education')
-    const maritalStatusSelect = document.querySelector('#marital-status')
-    const motherInput = document.querySelector('#mother')
-    const fatherInput = document.querySelector('#father')
-    cpfInput.value = cpf
-    nameInput.value = name;
-    birthdayInput.value = birthday;
-    emailInput.value = email;
-    genderSelect.value = gender;
-    nationalitySelect.value = nationality;
-    placeOfBirthInput.value = placeOfBirth;
-    occupationInput.value = job;
-    educationInput.value = education;
-    maritalStatusSelect.value = maritalStatus;
-    motherInput.value = mother;
-    fatherInput.value = father;
 }
 
 const patientData = async (id) => {

@@ -193,7 +193,7 @@
       "date": "",
       "start": "",
       "end": "",
-      "abstract": "",
+      "abstract": "Esse é um texto",
       "value": "",
       "paymentFormat": "Não pago",
       "paymentStatus": "Pago",
@@ -206,25 +206,12 @@
       "date": "30/04/23",
       "start": "",
       "end": "",
-      "abstract": "Esse é um texto",
+      "abstract": "Esse é um texto editado, de novo, novamente e de novo mais uma vez.",
       "value": "",
       "paymentFormat": "",
       "paymentStatus": "",
       "patient_id": "1",
       "id": 7
-    },
-    {
-      "title": "Novo",
-      "type": "Sessão",
-      "date": "",
-      "start": "",
-      "end": "",
-      "abstract": "",
-      "value": "",
-      "paymentFormat": "Débito",
-      "paymentStatus": "Não pago",
-      "patient_id": "1",
-      "id": 8
     }
   ],
   "users": [

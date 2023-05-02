@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="../images/icons/favicon.ico">
     <link rel="stylesheet" href="../style.css">
-    <script src="../scripts/ballon.js" defer></script>
+    <script src="../scripts/header.js" defer></script>
     <script src="../scripts/modal.js" defer></script>
     <script src="../scripts/onClick.js" defer></script>
-    <script src="../scripts/radio.js" defer></script>
     <script src="../scripts/backToTop.js" defer></script>
     <script src="../scripts/api.js" defer></script>
     <script src="../scripts/medicalRecord.js" defer></script>
@@ -24,10 +23,10 @@
             <div class="logo-icon">
                 <img src="../images/logo-icon.png" alt="logo icon">
             </div>
-            <p class="comfortaa-16" onclick="goToPage('./patient.html')">Voltar para listagem</p>
+            <p class="comfortaa-16" onclick="goToPage('./patient.html?user_id=' + new URLSearchParams(window.location.search).get('user_id'))">Voltar para listagem</p>
         </div>
         <div class="montserrat-24">
-            <p>Bem vindo(a), <span class="bold">Orion</span></p>
+            <p>Bem vindo(a), <span class="bold" id="user-name-header">Orion</span></p>
             <img class="icon" src="../images/icons/arrow-down.png" alt="arrow down" id="arrow-down">
         </div>
         <div class="none" id="balloon-wrapper">
@@ -35,7 +34,7 @@
                 <div class="triangle"></div>
                 <div class="gradient">
                     <p class="comfortaa-14">Admin</p>
-                    <p class="montserrat-12">orionalves@github.com</p>
+                    <p class="montserrat-12" id="user-email-ballon">orionalves@github.com</p>
                 </div>
                 <div class="exit" onclick="goToPage('../index.html')">
                     <img src="../images/icons/arrow-down-right.png" alt="green arrow down right">
