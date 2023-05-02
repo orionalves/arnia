@@ -15,6 +15,13 @@
     gap: 1.2rem;
 }
 
+.error {
+    display: block;
+    margin-top: 0.3rem;
+    margin-bottom: -1.3rem;
+    font-weight: 600;
+}
+
 .form-field, .input, .textarea, .select, .select option {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -43,6 +50,12 @@
 .form-field, .label, .input, small, .login>button, .textarea {
     width: 100%;
 }
+
+/* #password::-ms-reveal,
+#password::-ms-clear
+{
+    display: none;
+} */
 
 .textarea {
     resize: none;

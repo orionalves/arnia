@@ -8,61 +8,60 @@
     <link rel="stylesheet" href="../style.css">
     <script src="../scripts/onClick.js" defer></script>
     <script src="../scripts/modal.js" defer></script>
+    <script src="../scripts/signup.js" defer></script>
     <title>Wexer Psi | Signup</title>
 </head>
 <body>
     <img class="background-logo" src="../images/background-logo.png" alt="background-logo">
-    <div class="center" id="sign-name">
-        <form class="user-form signup">
-            <img class="logo" src="../images/logo.png" alt="logo Wexer Psi">
-            <p class="montserrat-18">Seja bem-vindo(a)!</p>
-            <p class="montserrat-16">Preencha os campos para se cadastrar</p>
-            <div class="form-field roboto-form-16">
-                <label class="label" for="name-user">Nome</label>
-                <input class="input" type="text" name="Nome" id="name-user">
-                <small class="montserrat-10 red"></small>
+    <form id="create-user">  
+        <div class="center" id="sign-name">
+            <div class="user-form signup">
+                <img class="logo" src="../images/logo.png" alt="logo Wexer Psi">
+                <p class="montserrat-18">Seja bem-vindo(a)!</p>
+                <p class="montserrat-16">Preencha os campos para se cadastrar</p>
+                <div class="form-field roboto-form-16" id="name-user-field">
+                    <label class="label" for="name-user">Nome</label>
+                    <input class="input" type="text" id="name-user">
+                </div>
+                <div class="form-field roboto-form-16" id="email-user-field">
+                    <label class="label" for="email-user">E-mail</label>
+                    <input class="input" type="text" id="email-user">
+                </div>
+                <div class="right-button">
+                    <button class="button-text-icon" type="button" onclick="required (emailUser.value)">Prosseguir
+                        <img src="../images/icons/arrow-right.svg" alt="arrow right">
+                    </button>
+                </div>
             </div>
-            <div class="form-field roboto-form-16">
-                <label class="label" for="email-user">E-mail</label>
-                <input class="input" type="email" name="E-mail" id="email-user">
-                <small class="montserrat-10 red"></small>
+        </div>
+        <div class="center none" id="sign-password">
+            <div class="user-form signup">
+                <img class="logo" src="../images/logo.png" alt="logo Wexer Psi">
+                <p class="montserrat-18">Seja bem-vindo(a)!</p>
+                <p class="montserrat-16">Escolha uma senha</p>
+                <div class="form-field roboto-form-16">
+                    <label class="label" for="password">Senha</label>
+                    <input class="input" type="password" id="password" required>
+                </div>
+                <div class="form-field roboto-form-16" id="password-field">
+                    <label class="label" for="confirm-password">Confirmar senha</label>
+                    <input class="input" type="password" id="confirm-password">
+                </div>
+                <div class="required">
+                    <p class="montserrat-14"><span class="red">*</span>Precisa no mínimo 8 digitos</p>
+                    <p class="montserrat-14"><span class="red">*</span>Precisa conter um caractere especial */+.</p>
+                    <p class="montserrat-14"><span class="red">*</span>Precisa conter uma letra em MAIÚSCULA</p>
+                </div>
+                <div class="right-button">
+                    <button class="button-text-icon" type="submit">Prosseguir
+                        <img src="../images/icons/arrow-right.svg" alt="arrow right">
+                    </button>
+                </div>
             </div>
-            <div class="right-button">
-                <button class="button-text-icon" type="button" onclick="next ()">Prosseguir
-                    <img src="../images/icons/arrow-right.svg" alt="arrow right">
-                </button>
-            </div>
-        </form>
-    </div>
-    <div class="center none" id="sign-password">
-        <form class="user-form signup">
-            <img class="logo" src="../images/logo.png" alt="logo Wexer Psi">
-            <p class="montserrat-18">Seja bem-vindo(a)!</p>
-            <p class="montserrat-16">Escolha uma senha</p>
-            <div class="form-field roboto-form-16">
-                <label class="label" for="password">Senha</label>
-                <input class="input" type="password" name="Senha" id="password">
-                <small class="montserrat-10 red"></small>
-            </div>
-            <div class="form-field roboto-form-16">
-                <label class="label" for="onfirm-password">Confirmar senha</label>
-                <input class="input" type="password" name="Confirmar senha" id="confirm-password">
-                <small class="montserrat-10 red"></small>
-            </div>
-            <div class="required">
-                <p class="montserrat-14"><span class="red">*</span>Precisa no mínimo 8 digitos</p>
-                <p class="montserrat-14"><span class="red">*</span>Precisa conter um caractere especial */+.</p>
-                <p class="montserrat-14"><span class="red">*</span>Precisa conter uma letra em MAIÚSCULA</p>
-            </div>
-            <div class="right-button">
-                <button class="button-text-icon" type="button" onclick="openModal (userRegister)">Prosseguir
-                    <img src="../images/icons/arrow-right.svg" alt="arrow right">
-                </button>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
     <div class="none center" id="modal">
-            <div class="none success" id="success-register">
+        <div class="none success" id="success-register">
                 <img src="../images/check-mark-success.gif" alt="check mark success">
                 <p class="comfortaa-24">Usuário cadastrado com sucesso!</p>
                 <button class="button-dark" type="button" onclick="goToPage ('../index.html')">Ok</button>

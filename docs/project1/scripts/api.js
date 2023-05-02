@@ -553,6 +553,7 @@ const showMedicalRecordFilter = async (id, type) => {
             });
         });
     })
+    updateText()
 }
 
 const showMedicalRecordFilterAll = async (id) => {
@@ -579,6 +580,7 @@ const showMedicalRecordFilterAll = async (id) => {
             });
         });
     })
+    updateText()
 }
 
 const filterMedicalRecord = async (find) => {
@@ -608,6 +610,7 @@ const filterMedicalRecord = async (find) => {
             });
         });
     })
+    updateText()
 }
 
 const showMedicalRecord = async (id) => {
@@ -634,6 +637,7 @@ const showMedicalRecord = async (id) => {
             });
         });
     })
+    updateText()
 }
 
 const getPatients = async (id = '') => {
@@ -642,11 +646,7 @@ const getPatients = async (id = '') => {
 }
 
 const getFilter = async (find, route) => {
-    // Para procurar apenas no nome ou CPF, usar descomentar regex e apiResponse e comentar a apiResponse atual
-    // const regexName = /^(\p{L}+[-\s']?)+$/u
-    // const apiResponse = await fetch(regexName.test(find) ? `http://localhost:3000/patients?name_like=${find}` : `http://localhost:3000/patients?cpf_like=${find}`)
     const apiResponse = await fetch(`http://localhost:3000/${route}?q=${find}`)
-    // const apiResponse = await fetch(`http://localhost:3000/${route}?_sort=id&_order=desc&q=${find}`)
     return await apiResponse.json();
 }
 
@@ -827,4 +827,5 @@ const editPatient = async (id) => {
         success (editPatients, successRegister)
     });
 }
+
 

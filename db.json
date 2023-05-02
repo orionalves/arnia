@@ -227,13 +227,36 @@
       "id": 8
     }
   ],
-  "user": [
+  "users": [
     {
-      "username": "orion",
       "name": "Orion de Carvalho Costa Alves",
       "email": "orion@github.com",
-      "password": "aA!1aA!1",
+      "password": "123",
       "id": 1
+    },
+    {
+      "name": "admin",
+      "email": "admin@admin.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "name": "admin",
+      "email": "a",
+      "password": "1",
+      "id": 3
+    },
+    {
+      "name": "das",
+      "email": "aadssda",
+      "password": "1",
+      "id": 4
+    },
+    {
+      "name": "asd",
+      "email": "asd",
+      "password": "123",
+      "id": 5
     }
   ]
 }
