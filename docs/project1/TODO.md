@@ -29,7 +29,7 @@
 [v] - Login
 [v] - Cadastro
 [v] - 96% completo
+[v] - Testar api externa
 [] - Completar 100% o projeto
-[] - Testar api externa
 [] - Refatorar o código
 [] - Fazer para celular
